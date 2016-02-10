@@ -1,6 +1,5 @@
 package Transactions;
 import java.io.*;
-import java.util.Scanner;
 
 public class TransactionReader {
     
@@ -43,7 +42,6 @@ public class TransactionReader {
      **************************************************************/                                       
     Transaction getNextTransaction(){
         Transaction nextTransaction;
-        Scanner lineScanner;
         int itemsInCart = 0;
         try{
             //Reads the next customer from the file
@@ -52,24 +50,21 @@ public class TransactionReader {
             
             //Gets first Item line
             currentLine = getNextLine();
-            while(isPaymentLine()){   
-                
-                //System.out.println("Item: " + currentLine);
-                lineScanner = new Scanner(currentLine);
-                itemList[itemsInCart][0] = lineScanner.nextInt();
-                
-                if(lineScanner.hasNextInt()){
-                    
-                }
-                
+            
+            while(nextLineIsItem()){   
+                addItem(currentLine,itemsInCart);
                 itemsInCart++;
-                //prep next line
                 
+                //prep next line
                 currentLine = getNextLine();
             }
             
+            for(int i=0;i<itemsInCart;i++){
+                System.out.println("UPC: " + itemList[i][0]+ "\tQty: "+itemList[i][1]);
+            }
+            
             //CURRENTLINE CONTAINS THE PAYMENT INFO
-            System.out.println(currentLine);
+            System.out.println("Payment Info: " + currentLine);
             
         }catch(Exception e){
             System.err.print("ERROR:" +e.getMessage());
@@ -90,13 +85,33 @@ public class TransactionReader {
         return null;
     }
     
-    boolean isPaymentLine(){
+    boolean nextLineIsItem(){
+
         if(!currentLine.contains("CASH") &&
                 !currentLine.contains("CREDIT") &&
                 !currentLine.contains("CHECK")){
             return true;
         }
+        
+        //System.out.println(currentLine + "is false");
         return false;
     }
     
+    void addItem(String itemString, int itemsInCart){
+        String itemSplit[] = itemString.split(" +");
+        
+        itemList[itemsInCart][0] = Integer.parseInt(itemSplit[0]);
+        
+        if (itemSplit.length == 1) {
+            itemList[itemsInCart][1] = 1;
+        } else {
+            itemList[itemsInCart][1] = Integer.parseInt(itemSplit[1]);
+        }
+    }
+    
+    void addPayment(String paymentString){
+        String paymentSplit[] = paymentString.split(" +");
+        
+        
+    }
 }
