@@ -5,7 +5,9 @@ public class TransactionReader {
     
     BufferedReader transactionBuffer;
     String currentLine;
-    String tempCustomer; //Placeholder until Customer class is made
+    Customer tempCustomer;
+    ItemList newItemList;
+    Payment payType;
     int itemList[][] = new int[100][2];
     
     //Initialize Transaction Reader with the Transaction File
@@ -45,13 +47,13 @@ public class TransactionReader {
         int itemsInCart = 0;
         try{
             //Reads the next customer from the file
-            tempCustomer = getNextLine();
-            System.out.println(tempCustomer);
+            tempCustomer = new Customer(getNextLine());
+            System.out.println(tempCustomer.getName());
             
             //Gets first Item line
             currentLine = getNextLine();
-            
             while(nextLineIsItem()){   
+                
                 addItem(currentLine,itemsInCart);
                 itemsInCart++;
                 
@@ -59,20 +61,17 @@ public class TransactionReader {
                 currentLine = getNextLine();
             }
             
-            for(int i=0;i<itemsInCart;i++){
-                System.out.println("UPC: " + itemList[i][0]+ "\tQty: "+itemList[i][1]);
-            }
+            newItemList = new ItemList(itemList,itemsInCart);
             
             //CURRENTLINE CONTAINS THE PAYMENT INFO
-            System.out.println("Payment Info: " + currentLine);
+            payType = addPayment(currentLine);
             
         }catch(Exception e){
             System.err.print("ERROR:" +e.getMessage());
         }
         
-        nextTransaction = new Transaction(null,null,null);
-        
-        
+        nextTransaction = new Transaction(tempCustomer,newItemList,payType);
+
         return nextTransaction;
     }
     
@@ -109,9 +108,10 @@ public class TransactionReader {
         }
     }
     
-    void addPayment(String paymentString){
+    Payment addPayment(String paymentString){
+        Payment tempPayment;
         String paymentSplit[] = paymentString.split(" +");
-        
-        
+        tempPayment = new Payment(paymentSplit[0],Double.parseDouble(paymentSplit[1]));
+        return tempPayment;
     }
 }
