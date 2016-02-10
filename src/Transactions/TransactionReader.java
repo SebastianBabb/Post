@@ -7,7 +7,7 @@ public class TransactionReader {
     BufferedReader transactionBuffer;
     String currentLine;
     String tempCustomer; //Placeholder until Customer class is made
-    String itemList[] = new String[100];
+    int itemList[][] = new int[100][2];
     
     //Initialize Transaction Reader with the Transaction File
     public TransactionReader(String fname){
@@ -43,25 +43,32 @@ public class TransactionReader {
      **************************************************************/                                       
     Transaction getNextTransaction(){
         Transaction nextTransaction;
+        Scanner lineScanner;
         int itemsInCart = 0;
         try{
             //Reads the next customer from the file
-            tempCustomer = transactionBuffer.readLine();
+            tempCustomer = getNextLine();
             System.out.println(tempCustomer);
             
             //Gets first Item line
-            currentLine = transactionBuffer.readLine();
-            while(!currentLine.contains("CASH") &&
-                    !currentLine.contains("CREDIT") &&
-                    !currentLine.contains("CHECK")){
-                System.out.println("Item: " + currentLine);
+            currentLine = getNextLine();
+            while(isPaymentLine()){   
+                
+                //System.out.println("Item: " + currentLine);
+                lineScanner = new Scanner(currentLine);
+                itemList[itemsInCart][0] = lineScanner.nextInt();
+                
+                if(lineScanner.hasNextInt()){
+                    
+                }
+                
                 itemsInCart++;
                 //prep next line
-                currentLine = transactionBuffer.readLine();
-
+                
+                currentLine = getNextLine();
             }
+            
             //CURRENTLINE CONTAINS THE PAYMENT INFO
-            Scanner paymentType = new Scanner(currentLine);
             System.out.println(currentLine);
             
         }catch(Exception e){
@@ -72,6 +79,24 @@ public class TransactionReader {
         
         
         return nextTransaction;
+    }
+    
+    private String getNextLine(){
+        try{
+            return transactionBuffer.readLine();
+        }catch(Exception e){
+            System.err.print("ERROR:" +e.getMessage());
+        }
+        return null;
+    }
+    
+    boolean isPaymentLine(){
+        if(!currentLine.contains("CASH") &&
+                !currentLine.contains("CREDIT") &&
+                !currentLine.contains("CHECK")){
+            return true;
+        }
+        return false;
     }
     
 }
