@@ -6,12 +6,12 @@ package Transactions;
  * until these classes are implemented 
  */
 public class Transaction {
-    String customer;
-    int[] lineItem;
-    String payment;
+    Customer customer;
+    ItemList lineItem;
+    Payment payment;
     
 
-    public Transaction(String customer, int[] lineItem, String payment){
+    public Transaction(Customer customer, ItemList lineItem, Payment payment){
         
         this.customer = customer;
         this.lineItem = lineItem;

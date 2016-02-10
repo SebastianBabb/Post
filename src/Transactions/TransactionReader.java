@@ -1,12 +1,13 @@
 package Transactions;
 import java.io.*;
-import java.util.Scanner;
 
 public class TransactionReader {
     
     BufferedReader transactionBuffer;
     String currentLine;
-    String tempCustomer; //Placeholder until Customer class is made
+    Customer tempCustomer;
+    ItemList newItemList;
+    Payment payType;
     int itemList[][] = new int[100][2];
     
     //Initialize Transaction Reader with the Transaction File
@@ -43,41 +44,33 @@ public class TransactionReader {
      **************************************************************/                                       
     Transaction getNextTransaction(){
         Transaction nextTransaction;
-        Scanner lineScanner;
         int itemsInCart = 0;
         try{
             //Reads the next customer from the file
-            tempCustomer = getNextLine();
-            System.out.println(tempCustomer);
+            tempCustomer = new Customer(getNextLine());
             
             //Gets first Item line
             currentLine = getNextLine();
-            while(isPaymentLine()){   
+            while(nextLineIsItem()){   
                 
-                //System.out.println("Item: " + currentLine);
-                lineScanner = new Scanner(currentLine);
-                itemList[itemsInCart][0] = lineScanner.nextInt();
-                
-                if(lineScanner.hasNextInt()){
-                    
-                }
-                
+                addItem(currentLine,itemsInCart);
                 itemsInCart++;
-                //prep next line
                 
+                //prep next line
                 currentLine = getNextLine();
             }
             
+            newItemList = new ItemList(itemList,itemsInCart);
+            
             //CURRENTLINE CONTAINS THE PAYMENT INFO
-            System.out.println(currentLine);
+            payType = addPayment(currentLine);
             
         }catch(Exception e){
             System.err.print("ERROR:" +e.getMessage());
         }
         
-        nextTransaction = new Transaction(null,null,null);
-        
-        
+        nextTransaction = new Transaction(tempCustomer,newItemList,payType);
+
         return nextTransaction;
     }
     
@@ -90,13 +83,34 @@ public class TransactionReader {
         return null;
     }
     
-    boolean isPaymentLine(){
+    boolean nextLineIsItem(){
+
         if(!currentLine.contains("CASH") &&
                 !currentLine.contains("CREDIT") &&
                 !currentLine.contains("CHECK")){
             return true;
         }
+        
+        //System.out.println(currentLine + "is false");
         return false;
     }
     
+    void addItem(String itemString, int itemsInCart){
+        String itemSplit[] = itemString.split(" +");
+        
+        itemList[itemsInCart][0] = Integer.parseInt(itemSplit[0]);
+        
+        if (itemSplit.length == 1) {
+            itemList[itemsInCart][1] = 1;
+        } else {
+            itemList[itemsInCart][1] = Integer.parseInt(itemSplit[1]);
+        }
+    }
+    
+    Payment addPayment(String paymentString){
+        Payment tempPayment;
+        String paymentSplit[] = paymentString.split(" +");
+        tempPayment = new Payment(paymentSplit[0],Double.parseDouble(paymentSplit[1]));
+        return tempPayment;
+    }
 }
