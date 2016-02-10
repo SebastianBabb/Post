@@ -48,7 +48,6 @@ public class TransactionReader {
         try{
             //Reads the next customer from the file
             tempCustomer = new Customer(getNextLine());
-            System.out.println(tempCustomer.getName());
             
             //Gets first Item line
             currentLine = getNextLine();
