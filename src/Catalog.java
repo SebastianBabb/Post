@@ -14,6 +14,7 @@ public class Catalog {
     
     private Item products[];   //the store's products, MAX 100
     private int numProducts;  //stores num products currently in catalog, also indicates new open space for addition of item
+    private boolean productsInitialized = false; 
     
     //DEFAULT CONSTRUCTOR
     Catalog(){
