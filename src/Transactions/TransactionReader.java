@@ -6,9 +6,8 @@ public class TransactionReader {
     BufferedReader transactionBuffer;
     String currentLine;
     Customer tempCustomer;
-    ItemList newItemList;
+    //ItemLine newItemLine;
     Payment payType;
-    int itemList[][] = new int[100][2];
     
     //Initialize Transaction Reader with the Transaction File
     public TransactionReader(String fname){
@@ -43,33 +42,34 @@ public class TransactionReader {
      *                                                            *
      **************************************************************/                                       
     Transaction getNextTransaction(){
-        Transaction nextTransaction;
+        Transaction nextTransaction = new Transaction();
         int itemsInCart = 0;
         try{
             //Reads the next customer from the file
             tempCustomer = new Customer(getNextLine());
+            nextTransaction.setCustomer(tempCustomer);
             
             //Gets first Item line
             currentLine = getNextLine();
+            
             while(nextLineIsItem()){   
                 
-                addItem(currentLine,itemsInCart);
-                itemsInCart++;
-                
+                nextTransaction.addItemLine(addItem(currentLine));              
                 //prep next line
                 currentLine = getNextLine();
             }
             
-            newItemList = new ItemList(itemList,itemsInCart);
+            //newItemLine = new ItemLine(); //RM LATER
             
             //CURRENTLINE CONTAINS THE PAYMENT INFO
             payType = addPayment(currentLine);
+            nextTransaction.setPayment(payType);
             
         }catch(Exception e){
             System.err.print("ERROR:" +e.getMessage());
         }
         
-        nextTransaction = new Transaction(tempCustomer,newItemList,payType);
+        nextTransaction.printTransaction();
 
         return nextTransaction;
     }
@@ -95,16 +95,15 @@ public class TransactionReader {
         return false;
     }
     
-    void addItem(String itemString, int itemsInCart){
-        String itemSplit[] = itemString.split(" +");
+    ItemLine addItem(String itemString){
         
-        itemList[itemsInCart][0] = Integer.parseInt(itemSplit[0]);
-        
-        if (itemSplit.length == 1) {
-            itemList[itemsInCart][1] = 1;
-        } else {
-            itemList[itemsInCart][1] = Integer.parseInt(itemSplit[1]);
+        String itemSplit[] = itemString.split("\\s{2,}");
+        if(itemSplit.length==2){
+            return new ItemLine(itemSplit[0], Integer.parseInt(itemSplit[1]));
+        }else{
+            return new ItemLine(itemSplit[0], 1);
         }
+        
     }
     
     Payment addPayment(String paymentString){

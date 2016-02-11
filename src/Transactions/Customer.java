@@ -2,14 +2,20 @@ package Transactions;
 
 
 public class Customer {
-    String name;
     
-    public Customer(String newName){
-        name=newName;
+    private String name;
+    
+    public Customer(){
+        this.name= null;
     }
     
+    public Customer(String newName){
+        this.name=newName;
+    }
+    
+    
     String getName(){
-        return name;
+        return this.name;
     }
             
 }

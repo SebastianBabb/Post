@@ -6,24 +6,42 @@ package Transactions;
  * until these classes are implemented 
  */
 public class Transaction {
-    Customer customer;
-    ItemList lineItem;
-    Payment payment;
-    
-
-    public Transaction(Customer customer, ItemList lineItem, Payment payment){
+    private Customer customer;
+    private ItemLine lineItems[];
+    private Payment payment;
+    private int numOfLines;
+   
+/*
+    public Transaction(Customer customer, ItemLine[] lineItem, Payment payment){
         
         this.customer = customer;
-        this.lineItem = lineItem;
+        this.lineItems = lineItem;
         this.payment = payment;
+    }
+*/
+    
+    public Transaction(){
+        this.customer = new Customer(null);
+        this.lineItems = new ItemLine[100];
+        this.numOfLines = 0;
+        this.payment = new Payment();
+        
+    }
+    
+    void printTransaction(){
+        System.out.println("Customer: " + customer.getName());
+        for(int i=0;i<numOfLines;i++){
+            lineItems[i].printItem();  
+        }
+        
     }
         
     Customer getCustomer(){
         return this.customer;
     }
     
-    ItemList getItemList(){
-        return this.lineItem;
+    ItemLine[] getItemList(){
+        return this.lineItems;
     }
     
     Payment getPayment(){
@@ -34,12 +52,17 @@ public class Transaction {
         this.customer = new Customer(newName);
     }
     
-    void setItemList(int[][] newList,int itemsInCart){
-        this.lineItem = new ItemList(newList,itemsInCart);
+    void setCustomer(Customer newCustomer){
+        this.customer = newCustomer;
     }
     
-    void setPayment(String payType, int paymentData){
-        this.payment = new Payment(payType, paymentData);
+    void addItemLine(ItemLine newLn){
+        this.lineItems[numOfLines] = newLn;
+        this.numOfLines++;
+    }
+    
+    void setPayment(Payment newPayment){
+        this.payment = newPayment;
     }
     
     
