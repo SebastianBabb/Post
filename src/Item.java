@@ -23,7 +23,7 @@ public class Item {
         this.ID = 0;
     }
     
-    Item(String newDescr, String newUPC, double newPrice, int newID){
+    Item( String newUPC, String newDescr,double newPrice, int newID){
         
         this.description = newDescr;
         this.UPC = newUPC;
@@ -81,5 +81,11 @@ public class Item {
         
         return 1; //success
     }
-    
+
+    @Override
+    public String toString(){
+        String itm = "";
+         itm = String.format("%-6s %-30s $%-4.2f\n", this.UPC,this.description,this.price);        
+        return itm;
+    }
 }

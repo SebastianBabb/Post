@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -53,13 +55,37 @@ public class ProductReader {
     
     */
    Item getNextProduct(){
-       String itemLine[] = curLine.split(" ");
+       String itemLine[] = curLine.split("\\s{2,}");
        
        //Item (UPC, Descr, Price, ID)
-       Item nextItem = new Item(itemLine[0], itemLine[1], Integer.parseInt(itemLine[2]), 0);
+       Item nextItem = new Item(itemLine[0], itemLine[1], Float.parseFloat(itemLine[2]), 0);
        
        return nextItem;
    }
-    
-    
+    /**
+     * Testing Product reader
+     * @param args 
+     */
+   public static void main(String[] args){
+       ProductReader test = null;
+        try {
+            test = new ProductReader();
+            
+            while(test.hasNextProduct()){
+                Item temp = test.getNextProduct();
+                System.out.println(temp.toString());
+            }
+        } catch (FileNotFoundException ex) {
+            if(test != null){
+                try {
+                    test.bReader.close();
+                } catch (IOException ex1) {
+                    System.err.println("IOException: could not close stream");
+                }
+            }
+            System.err.println("FileNotFound -->" + ex.getMessage());
+        } catch (IOException ex) {
+            System.err.append("IOExcetion: Error reading from buffered reader");
+        }
+   }
 }
