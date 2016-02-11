@@ -4,9 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -55,6 +52,9 @@ public class ProductReader {
     
     */
    Item getNextProduct(){
+       //Need to use \\s{2,} so string.split will capture multiple spaces.
+       //But we do not want it ti split on single spaces because of product decriptions
+       //--AJS
        String itemLine[] = curLine.split("\\s{2,}");
        
        //Item (UPC, Descr, Price, ID)

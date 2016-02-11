@@ -23,6 +23,8 @@ public class Item {
         this.ID = 0;
     }
     
+    //Argument order did not match constructor call in productreader class.
+    // Changed order here. --AJS
     Item( String newUPC, String newDescr,double newPrice, int newID){
         
         this.description = newDescr;
@@ -82,6 +84,11 @@ public class Item {
         return 1; //success
     }
 
+    /**
+     * Add toString method to print formatted item objects
+     * @return 
+     * @Author asouza
+     */
     @Override
     public String toString(){
         String itm = "";
