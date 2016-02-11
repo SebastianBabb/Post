@@ -69,7 +69,7 @@ public class ProductReader {
     
     */
    Item getNextProduct(){
-       String itemLine[] = curLine.split(" +");
+       String itemLine[] = curLine.split("\\s{2,}");
        
        System.out.println("itemLine: SIZE " + itemLine.length );
        for(int i = 0; i < itemLine.length; i++){

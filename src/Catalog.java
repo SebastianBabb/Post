@@ -52,10 +52,12 @@ public class Catalog {
     }
     
     void printCatalog(){
-        System.out.printf("%10s%25s%6s", "UPC", "Description", "Price");
-        
+        System.out.printf("%10s%25s%6s\n", "UPC", "Description", "Price");
+        Item itemToPrint = new Item();
         for(int i = 0; i < this.numProducts; i++){
-            System.out.printf("%10s%25s%6d\n", this.products[i].UPC, this.products[i].description, this.products[i].price);
+            itemToPrint = this.products[i];
+            System.out.printf("%10s%25s%10s\n", itemToPrint.getItemUPC(), itemToPrint.getItemDescription(), itemToPrint.getItemPrice());
+//            System.out.println()  
         }
         
     }

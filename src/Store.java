@@ -74,7 +74,6 @@ public class Store {
         while(storePR.hasNextProduct()){
             storeCatalog.addProduct(storePR.getNextProduct());
         }
-            
         
         return storeCatalog;
     }
