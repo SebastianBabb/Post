@@ -1,3 +1,8 @@
+
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -56,4 +61,23 @@ public class Store {
         
         return 1;
     }
+    
+    Catalog createCatalogFromFile(){
+        Catalog storeCatalog = new Catalog();
+        ProductReader storePR;
+        
+        
+        //PPENING FILE
+        storePR = new ProductReader();
+
+        //FILILNG CATALOG
+        while(storePR.hasNextProduct()){
+            storeCatalog.addProduct(storePR.getNextProduct());
+        }
+            
+        
+        return storeCatalog;
+    }
+    
+   
 }

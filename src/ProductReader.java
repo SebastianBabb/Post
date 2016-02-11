@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -27,22 +29,36 @@ public class ProductReader {
     private String curLine;  //holds line loaded in hasNextProduct to return in getNextProduct
     
     //DEFAULT CONSTRUCTOR
-    ProductReader() throws FileNotFoundException{
-        this.fReader = new FileReader(new File("products.txt"));
-        this.bReader = new BufferedReader(fReader);
+    ProductReader(){
+        try {
+            this.fReader = new FileReader(new File("products.txt"));
+            this.bReader = new BufferedReader(fReader);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ProductReader.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
-    ProductReader(String fName) throws FileNotFoundException{
-        this.fReader = new FileReader(new File(fName));
-        this.bReader = new BufferedReader(fReader);
+    ProductReader(String fName){
+        try {
+            this.fReader = new FileReader(new File(fName));
+            this.bReader = new BufferedReader(fReader);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ProductReader.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     //SAVES NEXT LINE, returns TRUE if next line exists
     //MUST CHECK hasNextProduct before getNextProduct!
-    boolean hasNextProduct() throws IOException{
-        curLine = bReader.readLine();
+    boolean hasNextProduct(){
+        try {
+            curLine = bReader.readLine();
+            
+            return curLine != null;
+        } catch (IOException ex) {
+            Logger.getLogger(ProductReader.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }
         
-        return curLine != null;
     }
     
    //creates an item object from curLine and returns it
@@ -53,10 +69,15 @@ public class ProductReader {
     
     */
    Item getNextProduct(){
-       String itemLine[] = curLine.split(" ");
+       String itemLine[] = curLine.split(" +");
+       
+       System.out.println("itemLine: SIZE " + itemLine.length );
+       for(int i = 0; i < itemLine.length; i++){
+           System.out.println("itemLine: " + i + " " + itemLine[i]);
+       }
        
        //Item (UPC, Descr, Price, ID)
-       Item nextItem = new Item(itemLine[0], itemLine[1], Integer.parseInt(itemLine[2]), 0);
+       Item nextItem = new Item(itemLine[0], itemLine[1], Double.parseDouble(itemLine[2]), 0);
        
        return nextItem;
    }

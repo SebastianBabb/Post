@@ -37,9 +37,27 @@ public class Catalog {
         
     }
     
-    int addProduct(){
+    int addProduct(Item newItem){
+        if(numProducts < 100){
+            products[numProducts] = newItem;
+            products[numProducts].setItemID(numProducts);
+            this.numProducts += 1;      //inc catalog size
+            return 1;  //added succesfully
+        }
+        else{
+            System.out.println("ERROR, catalog is full, did not add item");
+            return -1;
+        }
         
-        return 1;
+    }
+    
+    void printCatalog(){
+        System.out.printf("%10s%25s%6s", "UPC", "Description", "Price");
+        
+        for(int i = 0; i < this.numProducts; i++){
+            System.out.printf("%10s%25s%6d\n", this.products[i].UPC, this.products[i].description, this.products[i].price);
+        }
+        
     }
     
 }

@@ -1,4 +1,3 @@
-12345678901234567890123456789012345678901234567890
 1111     Liger                    50.00
 1112     Coffee                    5.00
 1113     Tea                       4.00
@@ -8,24 +7,24 @@
 1117     Beer                     15.00
 1118     Wine                     22.25
 1119     Pizza                    44.75
-1120     Chicken Wings            22.55
-1121     Sea shell                 3.00
-1122     King Salmon              55.00
+1120     Chicken_Wings            22.55
+1121     Sea_shell                 3.00
+1122     King_Salmon              55.00
 1123     Tricycle                699.99
-1124     Jet Ski                1749.00
-1125     DVD Player                1.99
+1124     Jet_Ski                1749.00
+1125     DVD_Player                1.99
 1126     Walkman                   0.99
 1127     Keyboard                  5.99
-1128     Computer Mouse            4.99
+1128     Computer_Mouse            4.99
 1129     Pigen                     1.75
-1130     Buffalo Sauce            12.50
+1130     Buffalo_Sauce            12.50
 1131     Pencil                    0.25
 1132     Pen                       0.55
-1133     Machenical Pencil         1.25
-1134     Machenical Pen            1.55
-1135     Gas Powered Pencil        2.25
-1136     Gas Powered Pen           2.55
-1137     Steam Powered Pencil      3.25
-1138     Steam Powered Pen         3.55
-1139     Hampster Powered Pencil   4.25
-1140     Hampster Powered Pen      4.55
+1133     Machenical_Pencil         1.25
+1134     Machenical_Pen            1.55
+1135     Gas_Powered_Pencil        2.25
+1136     Gas_Powered_Pen           2.55
+1137     Steam_Powered_Pencil      3.25
+1138     Steam_Powered_Pen         3.55
+1139     Hampster_Powered_Pencil   4.25
+1140     Hampster_Powered_Pen      4.55

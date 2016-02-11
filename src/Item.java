@@ -23,7 +23,7 @@ public class Item {
         this.ID = 0;
     }
     
-    Item(String newDescr, String newUPC, double newPrice, int newID){
+    Item(String newUPC, String newDescr, double newPrice, int newID){
         
         this.description = newDescr;
         this.UPC = newUPC;
