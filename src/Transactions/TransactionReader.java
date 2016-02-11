@@ -1,4 +1,7 @@
 package Transactions;
+
+import Transactions.payment.Payment;
+
 import java.io.*;
 
 public class TransactionReader {
@@ -23,7 +26,7 @@ public class TransactionReader {
     }
     
     //Checks if The Transaction file has another entry (Blank line)
-    boolean hasValidTransaction(){
+    public boolean hasValidTransaction(){
         try{
             currentLine = transactionBuffer.readLine();
             if(currentLine == null){
@@ -42,7 +45,7 @@ public class TransactionReader {
      * !!!  ASSUMES YOU HAVE CHECKED hasValidTransaction()  !!!   *
      *                                                            *
      **************************************************************/                                       
-    Transaction getNextTransaction(){
+    public Transaction getNextTransaction(){
         Transaction nextTransaction;
         int itemsInCart = 0;
         try{

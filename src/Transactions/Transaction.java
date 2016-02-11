@@ -1,5 +1,7 @@
 package Transactions;
 
+import Transactions.payment.Payment;
+
 /**
  * Transaction Temporarily uses Strings for Customer, int arrays for
  * lineItem and a string for payment type 
@@ -17,5 +19,16 @@ public class Transaction {
         this.lineItem = lineItem;
         this.payment = payment;
     }
-        
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public ItemList getItemList() {
+        return lineItem;
+    }
+
+    public Payment getPayment() {
+        return payment;
+    }
 }

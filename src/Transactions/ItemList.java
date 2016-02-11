@@ -9,4 +9,12 @@ public class ItemList {
         items=list;
         numberOfItems = len;
     }
+
+    public int getNumberOfItems() {
+        return numberOfItems;
+    }
+
+    public int[][] getItems() {
+        return items;
+    }
 }
