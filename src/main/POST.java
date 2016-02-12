@@ -37,9 +37,9 @@ public class POST implements Runnable {
     private final Catalog catalog;
     private final Logger logger;
 
-    public POST(Store store, Catalog catalog, Logger logger) {
+    public POST(Store store, Logger logger) {
         this.store = store;
-        this.catalog = catalog;
+        this.catalog = store.getCatalog();
         this.logger = logger;
     }
 
@@ -211,7 +211,7 @@ public class POST implements Runnable {
     /**
      * Checks if transaction is valid before processing.
      * 
-     * @param transaction
+     * @param transactions
      * @return status of validity
      */
     public boolean isValidTransaction(Transaction transaction) {
@@ -249,35 +249,35 @@ public class POST implements Runnable {
         void onFinish(int status, String invoice);
     }
 
-    public static void main(String[] args) {
-        Store store = new Store();
-        Catalog catalog = store.createCatalogFromFile();
-
-        System.out.println("Current Catalog: \n");
-        catalog.printCatalog();
-        System.out.println("\nProcessing Transactoins: \n");
-        
-        
-        POST post = new POST(store, catalog, new Logger() {
-            @Override
-            public void output(String output) {
-                outputToConsole(output);
-                outputToFile("src/invoices.txt", output + '\n');
-            }
-        });
-
-        TransactionReader reader = new TransactionReader("src/Transactions/transactions.txt");
-
-        while (reader.hasValidTransaction()) {
-            Transaction transaction = reader.getNextTransaction();
-            post.send(transaction, new POSTCallback() {
-                @Override
-                public void onFinish(int status, String invoice) {
-                    if (status == POST.STATUS_OK) {
-
-                    }
-                }
-            });
-        }
-    }
+//    public static void main(String[] args) {
+//        Store store = new Store();
+//        store.createCatalogFromFile();
+//
+//        System.out.println("Current Catalog: \n");
+//        store.getCatalog().printCatalog();
+//        System.out.println("\nProcessing Transactoins: \n");
+//        
+//        
+//        POST post = new POST(store, store.getCatalog(), new Logger() {
+//            @Override
+//            public void output(String output) {
+//                outputToConsole(output);
+//                outputToFile("src/invoices.txt", output + '\n');
+//            }
+//        });
+//
+//        TransactionReader reader = new TransactionReader("src/Transactions/transactions.txt");
+//
+//        while (reader.hasValidTransaction()) {
+//            Transaction transaction = reader.getNextTransaction();
+//            post.send(transaction, new POSTCallback() {
+//                @Override
+//                public void onFinish(int status, String invoice) {
+//                    if (status == POST.STATUS_OK) {
+//
+//                    }
+//                }
+//            });
+//        }
+//    }
 }

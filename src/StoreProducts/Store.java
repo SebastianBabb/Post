@@ -21,8 +21,9 @@ import java.util.logging.Logger;
 
 public class Store {
     
-    String storeName;
-    String storeAddress;
+    private String storeName;
+    private String storeAddress;
+    private Catalog catalog;
     
     
     //DEFAULT CONSTRUCTOR
@@ -37,6 +38,16 @@ public class Store {
         this.storeName = newName;
         this.storeAddress = newAddress;
         
+    }
+    
+    public Catalog getCatalog(){
+        
+        return this.catalog;
+    }
+    
+    public void setCatalog(Catalog newCatalog){
+        
+        this.catalog = newCatalog;
     }
     
     //store name getter
@@ -90,6 +101,7 @@ public class Store {
         //marks catalog that it has been init'd from file
         storeCatalog.productInitDone();
         
+        this.catalog = storeCatalog;
         return storeCatalog;
     }
     

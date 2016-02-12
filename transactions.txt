@@ -4,7 +4,7 @@ Bobby Joe
 1115     2
 1114     4
 1113
-CASH 45.00
+CASH 2000.00
 
 Jane Doe
 1112
