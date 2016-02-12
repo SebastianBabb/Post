@@ -6,8 +6,8 @@ public class Payment {
     private double paymentNumber;
     
     public Payment(){
-        paymentType=null;
-        paymentNumber=-1;
+        this.paymentType=null;
+        this.paymentNumber=-1;
     }
     
     public Payment(String paymentType, double paymentNumber){
