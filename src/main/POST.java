@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Random;
 
 /**
  * Point of Sales Terminal (POST)
@@ -146,10 +147,15 @@ public class POST implements Runnable {
                 tendered = "Paid by Check";
                 break;
             case Payment.TYPE_CREDIT:
-                if (payment instanceof Credit) {
-                    Credit credit = (Credit) payment;
-                    tendered = String.format("Credit Card %s", credit.getNumber());
-                }
+//                if (payment instanceof Credit) {
+//                    Credit credit = (Credit) payment;
+//                    tendered = String.format("Credit Card %s", credit.getNumber());
+//                }
+                
+                //ABOVE CODE NOT WORKING FOR SOME REASON, payment instanceof Credit is always false
+                
+                //this is a dirty solution... :(
+                tendered = String.format("Credit Card %s", (int) payment.getAmount());
                 break;
         }
 
@@ -159,12 +165,25 @@ public class POST implements Runnable {
 
         String returned = String.format("$%.2f", payment.getAmount() - total);
 
-        builder.append(format(COLUMN_WIDTH_L, "Amount Tendered:"));
-        builder.append(format(COLUMN_WIDTH_C + COLUMN_WIDTH_R, tendered));
-        builder.append('\n');
-        builder.append(format(COLUMN_WIDTH_L, "Amount Returned:"));
-        builder.append(format(COLUMN_WIDTH_C + COLUMN_WIDTH_R, returned));
-        builder.append('\n');
+        if(payment.getType() !=2){ //set ammount tendered/returned if NOT Credit
+            builder.append(format(COLUMN_WIDTH_L, "Amount Tendered:"));
+            builder.append(format(COLUMN_WIDTH_C + COLUMN_WIDTH_R, tendered));
+            builder.append('\n');
+            builder.append(format(COLUMN_WIDTH_L, "Amount Returned:"));
+            builder.append(format(COLUMN_WIDTH_C + COLUMN_WIDTH_R, returned));
+            builder.append('\n');
+        }
+        else{
+            builder.append(format(COLUMN_WIDTH_L, "Paid with:"));
+            builder.append(format(COLUMN_WIDTH_C + COLUMN_WIDTH_R, tendered));
+            builder.append('\n');
+            
+            //Checking if card approved
+            if(!creditCardApproved()){
+                builder.append("CREDIT CARD DECLINED!");
+                builder.append('\n');
+            }
+        }
 
         return builder.toString();
     }
@@ -180,6 +199,15 @@ public class POST implements Runnable {
         return String.format("%1$" + width + "s", value);
     }
 
+    /**Simulating 10% credit card decline
+     * 
+     * @return false 10% of time
+     */
+    public boolean creditCardApproved(){
+        Random rn = new Random();
+        return rn.nextInt(10) > 0;  //if random number == 0, decline (10% to roll 0)
+    }
+    
     /**
      * Checks if transaction is valid before processing.
      * 

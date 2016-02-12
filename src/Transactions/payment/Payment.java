@@ -36,6 +36,7 @@ public class Payment {
     }
     
     public int getType() {
+//        System.out.println("PAYMENT TYPE: " + type);
         return type;
     }
     
