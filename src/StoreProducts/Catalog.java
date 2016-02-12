@@ -68,18 +68,18 @@ public class Catalog {
         }
     }
     
-    boolean UPCExists(String upc){
+    public boolean UPCExists(String upc){
         for(int i = 0; i < this.numProducts; i++){
-            if(upc == this.products[i].getItemUPC()){
+            if(upc.equalsIgnoreCase(this.products[i].getItemUPC())){
                 return true;
             }
         }
         return false;
     }
     
-    Item getItem(String upc){
+    public Item getItem(String upc){
         for(int i = 0; i < this.numProducts; i++){
-            if(upc == this.products[i].getItemUPC()){
+            if(upc.equalsIgnoreCase(this.products[i].getItemUPC())){
                 return this.products[i];
             }
         }

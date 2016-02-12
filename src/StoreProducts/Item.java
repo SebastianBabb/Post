@@ -34,7 +34,7 @@ public class Item {
     }
     
     //GETTERS
-    String getItemDescription(){
+    public String getItemDescription(){
         
         return this.description;
     }
@@ -45,7 +45,7 @@ public class Item {
        
     }
     
-    double getItemPrice(){
+    public double getItemPrice(){
         
         return this.price;
     }

@@ -1,5 +1,8 @@
 package main;
 
+import StoreProducts.Catalog;
+import StoreProducts.Item;
+import StoreProducts.Store;
 import Transactions.ItemLine;
 import Transactions.payment.Credit;
 import Transactions.payment.Payment;
@@ -22,17 +25,20 @@ import java.util.Queue;
 public class POST implements Runnable {
 
     private static final int COLUMN_WIDTH_L = -20;
-    private static final int COLUMN_WIDTH_R = 20;
+    private static final int COLUMN_WIDTH_C = 10;
+    private static final int COLUMN_WIDTH_R = 12;
 
     public static final int STATUS_OK = 0;
     public static final int STATUS_FAILED = 1;
 
     private final Queue<Task> queue = new LinkedList<>();
-    private final String storeName;
+    private final Store store;
+    private final Catalog catalog;
     private final Logger logger;
 
-    public POST(String storeName, Logger logger) {
-        this.storeName = storeName;
+    public POST(Store store, Catalog catalog, Logger logger) {
+        this.store = store;
+        this.catalog = catalog;
         this.logger = logger;
     }
 
@@ -48,11 +54,11 @@ public class POST implements Runnable {
     private void execute() {
         if (!queue.isEmpty()) {
             Task task = queue.poll();
-            String invoice = createInvoice(storeName, task.getTransaction());
+            String invoice = createInvoice(store.getStoreName(), task.getTransaction());
             logger.output(invoice);
 
             if (task.getCallback() != null) {
-                task.getCallback().onFinish(0, invoice);
+                task.getCallback().onFinish(STATUS_OK, invoice);
             }
 
             execute();
@@ -91,7 +97,7 @@ public class POST implements Runnable {
         SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/y h:mm a");
 
         builder.append(format(COLUMN_WIDTH_L, name));
-        builder.append(format(COLUMN_WIDTH_R, dateFormat.format(calendar.getTime())));
+        builder.append(format(COLUMN_WIDTH_C + COLUMN_WIDTH_R, dateFormat.format(calendar.getTime())));
         builder.append('\n');
 
         float total = 0;
@@ -103,15 +109,24 @@ public class POST implements Runnable {
 
             String upc = itemLine.getUPC();
             int quantity = itemLine.getQuantity();
+            
+            String description;
+            double price = 0;
+            double subtotal = 0;
 
-            Item item = new Item();
+            if (catalog.UPCExists(upc)) {
+                Item item = catalog.getItem(upc);
 
-            String description = item.getItemDescription();
-            double price = item.getItemPrice();
-            double subtotal = item.getItemPrice() * quantity;
+                description = item.getItemDescription();
+                price = item.getItemPrice();
+                subtotal = price * quantity;
+            } else {
+                description = String.format("??? [UPC %s]", upc);
+            }
 
-            builder.append(format(COLUMN_WIDTH_L, description + ":"));
-            builder.append(format(COLUMN_WIDTH_R, String.format("%d @ %.2f %.2f", quantity, price, subtotal)));
+            builder.append(format(COLUMN_WIDTH_L, description));
+            builder.append(format(COLUMN_WIDTH_C, String.format("%d @ %.2f", quantity, price)));
+            builder.append(format(COLUMN_WIDTH_R, String.format("%.2f", subtotal)));
             builder.append('\n');
 
             total += subtotal;
@@ -120,7 +135,7 @@ public class POST implements Runnable {
         builder.append("------");
         builder.append('\n');
         builder.append(format(COLUMN_WIDTH_L, "Total:"));
-        builder.append(format(COLUMN_WIDTH_R, String.format("$%.2f", total)));
+        builder.append(format(COLUMN_WIDTH_C + COLUMN_WIDTH_R, String.format("$%.2f", total)));
         builder.append('\n');
 
         Payment payment = transaction.getPayment();
@@ -145,10 +160,10 @@ public class POST implements Runnable {
         String returned = String.format("$%.2f", payment.getAmount() - total);
 
         builder.append(format(COLUMN_WIDTH_L, "Amount Tendered:"));
-        builder.append(format(COLUMN_WIDTH_R, tendered));
+        builder.append(format(COLUMN_WIDTH_C + COLUMN_WIDTH_R, tendered));
         builder.append('\n');
         builder.append(format(COLUMN_WIDTH_L, "Amount Returned:"));
-        builder.append(format(COLUMN_WIDTH_R, returned));
+        builder.append(format(COLUMN_WIDTH_C + COLUMN_WIDTH_R, returned));
         builder.append('\n');
 
         return builder.toString();
@@ -179,7 +194,7 @@ public class POST implements Runnable {
      * Task contains both the transaction and callback, if any, to be pushed
      * to the queue.
      */
-    private static class Task {
+    private class Task {
 
         private final Transaction transaction;
         private final POSTCallback callback;
@@ -207,10 +222,14 @@ public class POST implements Runnable {
     }
 
     public static void main(String[] args) {
-        POST post = new POST("CSC 668/868", new Logger() {
+        Store store = new Store();
+        Catalog catalog = store.createCatalogFromFile();
+
+        POST post = new POST(store, catalog, new Logger() {
             @Override
             public void output(String output) {
                 outputToConsole(output);
+                outputToFile("src/invoices.txt", output + '\n');
             }
         });
 

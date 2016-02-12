@@ -26,7 +26,7 @@ public class Store {
     
     
     //DEFAULT CONSTRUCTOR
-    Store(){
+    public Store(){
         this.storeName = "General Store";
         this.storeAddress = "100 Main Stree";
         
@@ -40,7 +40,7 @@ public class Store {
     }
     
     //store name getter
-    String getStoreName(){
+    public String getStoreName(){
         
         return this.storeName;
     }
@@ -74,7 +74,7 @@ public class Store {
         return dateFormat.format(date);
     }
     
-    Catalog createCatalogFromFile(){
+    public Catalog createCatalogFromFile(){
         Catalog storeCatalog = new Catalog();
         ProductReader storePR;
         
