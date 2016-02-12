@@ -1,6 +1,6 @@
 package main;
 
-import Transactions.ItemList;
+import Transactions.ItemLine;
 import Transactions.payment.Credit;
 import Transactions.payment.Payment;
 import Transactions.Transaction;
@@ -95,11 +95,14 @@ public class POST implements Runnable {
         builder.append('\n');
 
         float total = 0;
-        ItemList itemList = transaction.getItemList();
 
-        for (int i = 0; i < itemList.getNumberOfItems(); i++) {
-            int upc = itemList.getItems()[i][0];
-            int quantity = itemList.getItems()[i][1];
+        for (ItemLine itemLine : transaction.getItemList()) {
+            if (itemLine == null) {
+                break;
+            }
+
+            String upc = itemLine.getUPC();
+            int quantity = itemLine.getQuantity();
 
             Item item = new Item();
 

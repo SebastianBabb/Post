@@ -8,6 +8,11 @@ public class Payment {
 
     private final int type;
     private final double amount;
+    
+    public Payment() {
+        this.type = TYPE_CASH;
+        this.amount = 0;
+    }
 
     public Payment(int type, double amount) {
         this.type = type;

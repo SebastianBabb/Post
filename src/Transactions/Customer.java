@@ -1,15 +1,32 @@
 package Transactions;
 
-
+/**Customer holds relevant information about the customer.
+ * 
+ * @author Jrubin
+ */
 public class Customer {
-    String name;
+    private String name;
     
-    public Customer(String newName){
-        name=newName;
+    /**Instantiates a blank customer.
+     * 
+     */
+    public Customer(){
+        this.name= null;
     }
-    
+    /**
+     * Constructor that takes in a String and sets Customers name to that string.
+     * @param newName 
+     */
+    public Customer(String newName){
+        this.name=newName;
+    }
+
+    /**
+     * Returns the customer's name
+     * @return name
+     */
     public String getName(){
-        return name;
+        return this.name;
     }
             
 }
