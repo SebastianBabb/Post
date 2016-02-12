@@ -1,3 +1,5 @@
+package StoreProducts;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -22,11 +24,9 @@ public class Item {
         this.price = 0.0;
         this.ID = 0;
     }
-    
-    //Argument order did not match constructor call in productreader class.
-    // Changed order here. --AJS
-    Item( String newUPC, String newDescr,double newPrice, int newID){
-        
+
+    Item(String newUPC, String newDescr, double newPrice, int newID){
+
         this.description = newDescr;
         this.UPC = newUPC;
         this.price = newPrice;
