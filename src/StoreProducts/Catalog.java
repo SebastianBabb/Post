@@ -42,7 +42,7 @@ public class Catalog {
         }    
     }
     
-    int addProduct(Item newItem){
+    public int addProduct(Item newItem){
         if(this.numProducts < 100){
             this.products[this.numProducts] = newItem;
             this.products[this.numProducts].setItemID(this.numProducts);
@@ -57,7 +57,7 @@ public class Catalog {
         }
     }
     
-    void printCatalog(){
+    public void printCatalog(){
         System.out.printf("%10s%25s%10s\n", "UPC", "Description", "Price");
         System.out.println("--------------------------------------------------");
         Item itemToPrint = new Item();

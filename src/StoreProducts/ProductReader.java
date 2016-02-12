@@ -73,10 +73,10 @@ public class ProductReader {
    Item getNextProduct(){
        String itemLine[] = curLine.split("\\s{2,}");
        
-       System.out.println("itemLine: SIZE " + itemLine.length );
-       for(int i = 0; i < itemLine.length; i++){
-           System.out.println("itemLine: " + i + " " + itemLine[i]);
-       }
+//       System.out.println("itemLine: SIZE " + itemLine.length );
+//       for(int i = 0; i < itemLine.length; i++){
+//           System.out.println("itemLine: " + i + " " + itemLine[i]);
+//       }
        
        //Item (UPC, Descr, Price, ID)
        Item nextItem = new Item(itemLine[0], itemLine[1], Double.parseDouble(itemLine[2]), 0);

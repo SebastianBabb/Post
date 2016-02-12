@@ -1,0 +1,2176 @@
+General Store
+
+Bobby Joe                2/11/2016 7:18 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+??? [UPC 1214]        4 @ 0.00        0.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1919.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1874.00
+
+General Store
+
+Jane Doe                 2/11/2016 7:18 PM
+Coffee                1 @ 5.00        5.00
+??? [UPC 1234]        2 @ 0.00        0.00
+??? [UPC 1324]        5 @ 0.00        0.00
+------
+Total:                               $5.00
+Amount Tendered:                 $54321.00
+Amount Returned:                 $54316.00
+
+General Store
+
+Jimmy Johnson            2/11/2016 7:18 PM
+??? [UPC 1212]        3 @ 0.00        0.00
+??? [UPC 1213]        2 @ 0.00        0.00
+??? [UPC 1211]        1 @ 0.00        0.00
+??? [UPC 1314]        1 @ 0.00        0.00
+??? [UPC 1234]        4 @ 0.00        0.00
+??? [UPC 1233]        3 @ 0.00        0.00
+??? [UPC 1222]        2 @ 0.00        0.00
+Liger                1 @ 50.00       50.00
+??? [UPC 1333]        7 @ 0.00        0.00
+------
+Total:                              $50.00
+Amount Tendered:                 $54432.00
+Amount Returned:                 $54382.00
+
+General Store
+
+Sal Salmon               2/11/2016 7:18 PM
+??? [UPC 1234]        4 @ 0.00        0.00
+??? [UPC 1222]        2 @ 0.00        0.00
+------
+Total:                               $0.00
+Amount Tendered:             Paid by Check
+Amount Returned:                   $400.50
+
+General Store
+
+John Wane                2/11/2016 7:18 PM
+King Salmon          2 @ 55.00      110.00
+??? [UPC 1212]        8 @ 0.00        0.00
+??? [UPC 1213]        5 @ 0.00        0.00
+??? [UPC 1214]        3 @ 0.00        0.00
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6842.00
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2658.45
+
+General Store
+
+Bobby Joe                2/11/2016 7:20 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 7:20 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Amount Tendered:                 $54321.00
+Amount Returned:                 $45567.90
+
+General Store
+
+Jimmy Johnson            2/11/2016 7:20 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Amount Tendered:                 $54432.00
+Amount Returned:                 $54175.80
+
+General Store
+
+Sal Salmon               2/11/2016 7:20 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 7:20 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Bobby Joe                2/11/2016 7:29 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 7:29 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Amount Tendered:                 $54321.00
+Amount Returned:                 $45567.90
+
+General Store
+
+Jimmy Johnson            2/11/2016 7:29 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Amount Tendered:                 $54432.00
+Amount Returned:                 $54175.80
+
+General Store
+
+Sal Salmon               2/11/2016 7:29 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 7:29 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 7:29 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Amount Tendered:                 $88545.00
+Amount Returned:                 $81136.26
+
+General Store
+
+Coolhand Luke            2/11/2016 7:29 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 7:42 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 7:42 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Amount Tendered:                 $54321.00
+Amount Returned:                 $45567.90
+
+General Store
+
+Jimmy Johnson            2/11/2016 7:42 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Amount Tendered:                 $54432.00
+Amount Returned:                 $54175.80
+
+General Store
+
+Sal Salmon               2/11/2016 7:42 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 7:42 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 7:42 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Amount Tendered:                 $88545.00
+Amount Returned:                 $81136.26
+
+General Store
+
+Coolhand Luke            2/11/2016 7:42 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 7:46 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 7:46 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Amount Tendered:                 $54321.00
+Amount Returned:                 $45567.90
+
+General Store
+
+Jimmy Johnson            2/11/2016 7:46 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Amount Tendered:                 $54432.00
+Amount Returned:                 $54175.80
+
+General Store
+
+Sal Salmon               2/11/2016 7:46 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 7:46 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 7:46 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Amount Tendered:                 $88545.00
+Amount Returned:                 $81136.26
+
+General Store
+
+Coolhand Luke            2/11/2016 7:46 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 7:52 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 7:52 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Amount Tendered:                 $54321.00
+Amount Returned:                 $45567.90
+
+General Store
+
+Jimmy Johnson            2/11/2016 7:52 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Amount Tendered:                 $54432.00
+Amount Returned:                 $54175.80
+
+General Store
+
+Sal Salmon               2/11/2016 7:52 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 7:52 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 7:52 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Amount Tendered:                 $88545.00
+Amount Returned:                 $81136.26
+
+General Store
+
+Coolhand Luke            2/11/2016 7:52 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 7:55 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 7:55 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Amount Tendered:                 $54321.00
+Amount Returned:                 $45567.90
+
+General Store
+
+Jimmy Johnson            2/11/2016 7:55 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Amount Tendered:                 $54432.00
+Amount Returned:                 $54175.80
+
+General Store
+
+Sal Salmon               2/11/2016 7:55 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 7:55 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 7:55 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Amount Tendered:                 $88545.00
+Amount Returned:                 $81136.26
+
+General Store
+
+Coolhand Luke            2/11/2016 7:55 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:02 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Bobby Joe                2/11/2016 8:07 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:07 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Amount Tendered:       Credit Card 54321.0
+Amount Returned:                 $45567.90
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:07 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Amount Tendered:       Credit Card 54432.0
+Amount Returned:                 $54175.80
+
+General Store
+
+Sal Salmon               2/11/2016 8:07 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:07 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:07 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Amount Tendered:       Credit Card 88545.0
+Amount Returned:                 $81136.26
+
+General Store
+
+Coolhand Luke            2/11/2016 8:07 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:10 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:10 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:10 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+
+General Store
+
+Sal Salmon               2/11/2016 8:10 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:10 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:10 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+
+General Store
+
+Coolhand Luke            2/11/2016 8:10 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:13 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:13 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Paid with:             Credit Card 54321.0
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:13 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Paid with:             Credit Card 54432.0
+
+General Store
+
+Sal Salmon               2/11/2016 8:13 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:13 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:13 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Paid with:             Credit Card 88545.0
+
+General Store
+
+Coolhand Luke            2/11/2016 8:13 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:13 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:13 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Paid with:               Credit Card 54321
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:13 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Paid with:               Credit Card 54432
+
+General Store
+
+Sal Salmon               2/11/2016 8:13 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:13 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:13 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Paid with:               Credit Card 88545
+
+General Store
+
+Coolhand Luke            2/11/2016 8:13 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:24 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Paid with:               Credit Card 54321
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Paid with:               Credit Card 54432
+
+General Store
+
+Sal Salmon               2/11/2016 8:24 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:24 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:24 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Paid with:               Credit Card 88545
+
+General Store
+
+Coolhand Luke            2/11/2016 8:24 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:24 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Paid with:               Credit Card 54321
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Paid with:               Credit Card 54432
+
+General Store
+
+Sal Salmon               2/11/2016 8:24 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:24 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:24 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Paid with:               Credit Card 88545
+
+General Store
+
+Coolhand Luke            2/11/2016 8:24 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:24 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Paid with:               Credit Card 54321
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Paid with:               Credit Card 54432
+CREDIT CARD DECLINED!
+
+General Store
+
+Sal Salmon               2/11/2016 8:24 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:24 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:24 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Paid with:               Credit Card 88545
+
+General Store
+
+Coolhand Luke            2/11/2016 8:24 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:24 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Paid with:               Credit Card 54321
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Paid with:               Credit Card 54432
+
+General Store
+
+Sal Salmon               2/11/2016 8:24 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:24 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:24 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Paid with:               Credit Card 88545
+
+General Store
+
+Coolhand Luke            2/11/2016 8:24 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:24 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Paid with:               Credit Card 54321
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Paid with:               Credit Card 54432
+
+General Store
+
+Sal Salmon               2/11/2016 8:24 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:24 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:24 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Paid with:               Credit Card 88545
+
+General Store
+
+Coolhand Luke            2/11/2016 8:24 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:24 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Paid with:               Credit Card 54321
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Paid with:               Credit Card 54432
+
+General Store
+
+Sal Salmon               2/11/2016 8:24 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:24 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:24 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Paid with:               Credit Card 88545
+CREDIT CARD DECLINED!
+
+General Store
+
+Coolhand Luke            2/11/2016 8:24 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:24 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Paid with:               Credit Card 54321
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Paid with:               Credit Card 54432
+
+General Store
+
+Sal Salmon               2/11/2016 8:24 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:24 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:24 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Paid with:               Credit Card 88545
+
+General Store
+
+Coolhand Luke            2/11/2016 8:24 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:24 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Paid with:               Credit Card 54321
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Paid with:               Credit Card 54432
+
+General Store
+
+Sal Salmon               2/11/2016 8:24 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:24 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:24 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Paid with:               Credit Card 88545
+
+General Store
+
+Coolhand Luke            2/11/2016 8:24 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:24 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Paid with:               Credit Card 54321
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Paid with:               Credit Card 54432
+
+General Store
+
+Sal Salmon               2/11/2016 8:24 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:24 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:24 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Paid with:               Credit Card 88545
+
+General Store
+
+Coolhand Luke            2/11/2016 8:24 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:24 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Paid with:               Credit Card 54321
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Paid with:               Credit Card 54432
+
+General Store
+
+Sal Salmon               2/11/2016 8:24 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:24 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:24 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Paid with:               Credit Card 88545
+
+General Store
+
+Coolhand Luke            2/11/2016 8:24 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:24 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Paid with:               Credit Card 54321
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:24 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Paid with:               Credit Card 54432
+CREDIT CARD DECLINED!
+
+General Store
+
+Sal Salmon               2/11/2016 8:24 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:24 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:24 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Paid with:               Credit Card 88545
+
+General Store
+
+Coolhand Luke            2/11/2016 8:24 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:27 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:27 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Paid with:               Credit Card 54321
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:27 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Paid with:               Credit Card 54432
+
+General Store
+
+Sal Salmon               2/11/2016 8:27 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:27 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:27 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Paid with:               Credit Card 88545
+
+General Store
+
+Coolhand Luke            2/11/2016 8:27 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:31 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:31 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Paid with:               Credit Card 54321
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:31 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Paid with:               Credit Card 54432
+
+General Store
+
+Sal Salmon               2/11/2016 8:31 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:31 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:31 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Paid with:               Credit Card 88545
+
+General Store
+
+Coolhand Luke            2/11/2016 8:31 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:34 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:34 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Paid with:               Credit Card 54321
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:34 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Paid with:               Credit Card 54432
+
+General Store
+
+Sal Salmon               2/11/2016 8:34 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:34 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:34 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Paid with:               Credit Card 88545
+
+General Store
+
+Coolhand Luke            2/11/2016 8:34 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+
+General Store
+
+Bobby Joe                2/11/2016 8:35 PM
+Coffee                3 @ 5.00       15.00
+Motorcycle          2 @ 950.00     1900.00
+Donut                 4 @ 4.50       18.00
+Tea                   1 @ 4.00        4.00
+------
+Total:                            $1937.00
+Amount Tendered:                    $45.00
+Amount Returned:                 $-1892.00
+
+General Store
+
+Jane Doe                 2/11/2016 8:35 PM
+Coffee                1 @ 5.00        5.00
+Machenical Pen        2 @ 1.55        3.10
+Jet Ski             5 @ 1749.00     8745.00
+------
+Total:                            $8753.10
+Paid with:               Credit Card 54321
+
+General Store
+
+Jimmy Johnson            2/11/2016 8:35 PM
+Coffee                3 @ 5.00       15.00
+Tea                   2 @ 4.00        8.00
+Liger                1 @ 50.00       50.00
+Donut                 1 @ 4.50        4.50
+Machenical Pen        4 @ 1.55        6.20
+Machenical Pencil     3 @ 1.25        3.75
+King Salmon          2 @ 55.00      110.00
+Liger                1 @ 50.00       50.00
+Machenical Pencil     7 @ 1.25        8.75
+------
+Total:                             $256.20
+Paid with:               Credit Card 54432
+
+General Store
+
+Sal Salmon               2/11/2016 8:35 PM
+Machenical Pen        4 @ 1.55        6.20
+King Salmon          2 @ 55.00      110.00
+------
+Total:                             $116.20
+Amount Tendered:             Paid by Check
+Amount Returned:                   $284.30
+
+General Store
+
+John Wane                2/11/2016 8:35 PM
+King Salmon          2 @ 55.00      110.00
+Coffee                8 @ 5.00       40.00
+Tea                   5 @ 4.00       20.00
+Donut                 3 @ 4.50       13.50
+Liger                1 @ 50.00       50.00
+Tea                   8 @ 4.00       32.00
+Motorcycle          7 @ 950.00     6650.00
+------
+Total:                            $6915.50
+Amount Tendered:                  $9500.45
+Amount Returned:                  $2584.95
+
+General Store
+
+Lara Croft               2/11/2016 8:35 PM
+Coffee                9 @ 5.00       45.00
+Motorcycle          5 @ 950.00     4750.00
+Smartphone          5 @ 500.00     2500.00
+Walkman               4 @ 0.99        3.96
+Computer Mouse       22 @ 4.99      109.78
+------
+Total:                            $7408.74
+Paid with:               Credit Card 88545
+
+General Store
+
+Coolhand Luke            2/11/2016 8:35 PM
+Wine                77 @ 22.25     1713.25
+------
+Total:                            $1713.25
+Amount Tendered:             Paid by Check
+Amount Returned:                   $286.75
+

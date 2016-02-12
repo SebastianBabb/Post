@@ -253,6 +253,11 @@ public class POST implements Runnable {
         Store store = new Store();
         Catalog catalog = store.createCatalogFromFile();
 
+        System.out.println("Current Catalog: \n");
+        catalog.printCatalog();
+        System.out.println("\nProcessing Transactoins: \n");
+        
+        
         POST post = new POST(store, catalog, new Logger() {
             @Override
             public void output(String output) {
