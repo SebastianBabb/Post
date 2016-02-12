@@ -11,11 +11,10 @@ package StoreProducts;
  */
 public class Item {
     
-    String description;
-    String UPC;
-    double price;
-    int ID;
-    
+    private String description;
+    private String UPC;
+    private double price;
+    private int ID;
     
     Item(){
         
