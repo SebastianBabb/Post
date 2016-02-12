@@ -1,3 +1,5 @@
+package StoreProducts;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -18,5 +20,6 @@ public class storeTester {
         newCatalog = newStore.createCatalogFromFile();
         
         newCatalog.printCatalog();
+        System.out.println(newStore.getDateTime());
     }
 }

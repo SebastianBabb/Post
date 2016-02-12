@@ -1,5 +1,10 @@
+package StoreProducts;
+
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -62,6 +67,13 @@ public class Store {
         return 1;
     }
     
+    String getDateTime(){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        //get current date time with Date()
+        Date date = new Date();
+        return dateFormat.format(date);
+    }
+    
     Catalog createCatalogFromFile(){
         Catalog storeCatalog = new Catalog();
         ProductReader storePR;
@@ -80,6 +92,7 @@ public class Store {
         
         return storeCatalog;
     }
+    
     
    
 }
