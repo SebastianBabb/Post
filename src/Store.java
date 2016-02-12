@@ -75,6 +75,9 @@ public class Store {
             storeCatalog.addProduct(storePR.getNextProduct());
         }
         
+        //marks catalog that it has been init'd from file
+        storeCatalog.productInitDone();
+        
         return storeCatalog;
     }
     

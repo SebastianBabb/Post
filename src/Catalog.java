@@ -34,11 +34,10 @@ public class Catalog {
         //inseart new products list
         for(int i = 0; i < MAX_PRODUCTS; i++){
             this.products[i] = newProducts[i];
-            this.UPCList[numProducts] = newProducts[i].getItemUPC();
+            this.UPCList[this.numProducts] = newProducts[i].getItemUPC();
             
             this.numProducts +=1;
         }    
-        
     }
     
     int addProduct(Item newItem){
@@ -79,14 +78,22 @@ public class Catalog {
     Item getItem(String upc){
         for(int i = 0; i < this.numProducts; i++){
             if(upc == this.products[i].getItemUPC()){
-                return products[i];
+                return this.products[i];
             }
         }
         return null;
     }
     
+    //UPC list for GUI
     String[] getUPCList(){
+        String rUPCList[] = new String[this.numProducts]; //upc list to return
         
+        //create UPC list with proper size (SHRINKING)
+        for(int i = 0; i < this.numProducts; i++){
+            rUPCList[i] = this.UPCList[i]; 
+        }
+        
+        return rUPCList;
     }
     
     /**Makes sure catalog does not get init multiple times from same file
