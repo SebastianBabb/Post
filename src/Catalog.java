@@ -15,11 +15,13 @@ public class Catalog {
     private Item products[];   //the store's products, MAX 100
     private int numProducts;  //stores num products currently in catalog, also indicates new open space for addition of item
     private boolean productsInitialized = false; 
+    private String[] UPCList;
     
     //DEFAULT CONSTRUCTOR
     Catalog(){
         this.products = new Item[MAX_PRODUCTS];
         this.numProducts = 0;  //first available stop = 0
+        this.UPCList = new String[MAX_PRODUCTS];
     }
     
     //SECONDARY CONSTRUCTOR
@@ -32,15 +34,19 @@ public class Catalog {
         //inseart new products list
         for(int i = 0; i < MAX_PRODUCTS; i++){
             this.products[i] = newProducts[i];
+            this.UPCList[numProducts] = newProducts[i].getItemUPC();
+            
             this.numProducts +=1;
         }    
         
     }
     
     int addProduct(Item newItem){
-        if(numProducts < 100){
-            products[numProducts] = newItem;
-            products[numProducts].setItemID(numProducts);
+        if(this.numProducts < 100){
+            this.products[this.numProducts] = newItem;
+            this.products[this.numProducts].setItemID(this.numProducts);
+            this.UPCList[this.numProducts] = newItem.getItemUPC();
+            
             this.numProducts += 1;      //inc catalog size
             return 1;  //added succesfully
         }
@@ -48,18 +54,46 @@ public class Catalog {
             System.out.println("ERROR, catalog is full, did not add item");
             return -1;
         }
-        
     }
     
     void printCatalog(){
-        System.out.printf("%10s%25s%6s\n", "UPC", "Description", "Price");
+        System.out.printf("%10s%25s%10s\n", "UPC", "Description", "Price");
+        System.out.println("--------------------------------------------------");
         Item itemToPrint = new Item();
         for(int i = 0; i < this.numProducts; i++){
             itemToPrint = this.products[i];
             System.out.printf("%10s%25s%10s\n", itemToPrint.getItemUPC(), itemToPrint.getItemDescription(), itemToPrint.getItemPrice());
 //            System.out.println()  
         }
+    }
+    
+    boolean UPCExists(String upc){
+        for(int i = 0; i < this.numProducts; i++){
+            if(upc == this.products[i].getItemUPC()){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    Item getItem(String upc){
+        for(int i = 0; i < this.numProducts; i++){
+            if(upc == this.products[i].getItemUPC()){
+                return products[i];
+            }
+        }
+        return null;
+    }
+    
+    String[] getUPCList(){
         
+    }
+    
+    /**Makes sure catalog does not get init multiple times from same file
+     * 
+     */
+    void productInitDone(){
+        this.productsInitialized = true;
     }
     
 }

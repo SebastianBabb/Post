@@ -81,6 +81,4 @@ public class ProductReader {
        
        return nextItem;
    }
-    
-    
 }
