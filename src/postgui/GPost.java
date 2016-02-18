@@ -43,7 +43,7 @@ public class GPost extends javax.swing.JFrame {
         setTitle("POST");
         setAlwaysOnTop(true);
 
-        gPanelTime.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        gPanelTime.setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
 
         lblCustName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCustName.setText("Customer Name");

@@ -33,7 +33,9 @@ public class GTimePanel extends javax.swing.JPanel {
 
         lblCurrentTime = new javax.swing.JLabel();
 
-        lblCurrentTime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
+
+        lblCurrentTime.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
