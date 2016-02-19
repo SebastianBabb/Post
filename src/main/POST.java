@@ -4,15 +4,13 @@ import StoreProducts.Catalog;
 import StoreProducts.Item;
 import StoreProducts.Store;
 import Transactions.ItemLine;
-import Transactions.payment.Credit;
 import Transactions.payment.Payment;
 import Transactions.Transaction;
-import Transactions.TransactionReader;
+import Transactions.payment.Check;
+import Transactions.payment.Credit;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Random;
 
 /**
@@ -23,7 +21,7 @@ import java.util.Random;
  *
  * @author Gary Ng
  */
-public class POST implements Runnable {
+public class POST {
 
     private static final int COLUMN_WIDTH_L = -20;
     private static final int COLUMN_WIDTH_C = 10;
@@ -32,7 +30,6 @@ public class POST implements Runnable {
     public static final int STATUS_OK = 0;
     public static final int STATUS_FAILED = 1;
 
-    private final Queue<Task> queue = new LinkedList<>();
     private final Store store;
     private final Catalog catalog;
     private final Logger logger;
@@ -43,40 +40,20 @@ public class POST implements Runnable {
         this.logger = logger;
     }
 
-    @Override
-    public void run() {
-        execute();
-    }
-
     /**
-     * Retrieves a transaction from the queue, then generates the invoice to be
-     * sent to the specified output.
-     */
-    private void execute() {
-        if (!queue.isEmpty()) {
-            Task task = queue.poll();
-            String invoice = createInvoice(store.getStoreName(), task.getTransaction());
-            logger.output(invoice);
-
-            if (task.getCallback() != null) {
-                task.getCallback().onFinish(STATUS_OK, invoice);
-            }
-
-            execute();
-        }
-    }
-
-    /**
-     * Receives a transaction from an external caller that gets pushed to the
-     * queue to be processed later.
+     * Receives a transaction from an external caller
      * 
      * @param transaction
      * @param callback 
      */
     public void send(Transaction transaction, POSTCallback callback) {
         if (isValidTransaction(transaction)) {
-            queue.add(new Task(transaction, callback));
-            run();
+            String invoice = createInvoice(store.getStoreName(), transaction);
+            logger.output(invoice);
+
+            if (callback != null) {
+                callback.onFinish(STATUS_OK, invoice);
+            }
         }
     }
 
@@ -140,49 +117,36 @@ public class POST implements Runnable {
         builder.append('\n');
 
         Payment payment = transaction.getPayment();
-        String tendered = null;
+        String tendered;
 
-        switch (payment.getType()) {
-            case Payment.TYPE_CHECK:
-                tendered = "Paid by Check";
-                break;
-            case Payment.TYPE_CREDIT:
-//                if (payment instanceof Credit) {
-//                    Credit credit = (Credit) payment;
-//                    tendered = String.format("Credit Card %s", credit.getNumber());
-//                }
-                
-                //ABOVE CODE NOT WORKING FOR SOME REASON, payment instanceof Credit is always false
-                
-                //this is a dirty solution... :(
-                tendered = String.format("Credit Card %s", (int) payment.getAmount());
-                break;
-        }
-
-        if (tendered == null) {
+        if (payment instanceof Check) {
+            tendered = "Paid by Check";
+        } else if (payment instanceof Credit) {
+            Credit credit = (Credit) payment;
+            tendered = String.format("Credit Card %s", credit.getNumber());
+        } else {
             tendered = String.format("$%.2f", payment.getAmount());
         }
 
         String returned = String.format("$%.2f", payment.getAmount() - total);
 
-        if(payment.getType() !=2){ //set ammount tendered/returned if NOT Credit
+        if (payment instanceof Credit) {
+            builder.append(format(COLUMN_WIDTH_L, "Paid with:"));
+            builder.append(format(COLUMN_WIDTH_C + COLUMN_WIDTH_R, tendered));
+            builder.append('\n');
+
+            //Checking if card approved
+            if (!creditCardApproved()) {
+                builder.append("CREDIT CARD DECLINED!");
+                builder.append('\n');
+            }
+        } else {
             builder.append(format(COLUMN_WIDTH_L, "Amount Tendered:"));
             builder.append(format(COLUMN_WIDTH_C + COLUMN_WIDTH_R, tendered));
             builder.append('\n');
             builder.append(format(COLUMN_WIDTH_L, "Amount Returned:"));
             builder.append(format(COLUMN_WIDTH_C + COLUMN_WIDTH_R, returned));
             builder.append('\n');
-        }
-        else{
-            builder.append(format(COLUMN_WIDTH_L, "Paid with:"));
-            builder.append(format(COLUMN_WIDTH_C + COLUMN_WIDTH_R, tendered));
-            builder.append('\n');
-            
-            //Checking if card approved
-            if(!creditCardApproved()){
-                builder.append("CREDIT CARD DECLINED!");
-                builder.append('\n');
-            }
         }
 
         return builder.toString();
@@ -211,34 +175,11 @@ public class POST implements Runnable {
     /**
      * Checks if transaction is valid before processing.
      * 
-     * @param transactions
+     * @param transaction
      * @return status of validity
      */
     public boolean isValidTransaction(Transaction transaction) {
         return true;
-    }
-
-    /**
-     * Task contains both the transaction and callback, if any, to be pushed
-     * to the queue.
-     */
-    private class Task {
-
-        private final Transaction transaction;
-        private final POSTCallback callback;
-
-        public Task(Transaction transaction, POSTCallback callback) {
-            this.transaction = transaction;
-            this.callback = callback;
-        }
-
-        public Transaction getTransaction() {
-            return transaction;
-        }
-
-        public POSTCallback getCallback() {
-            return callback;
-        }
     }
 
     /**
@@ -248,36 +189,4 @@ public class POST implements Runnable {
 
         void onFinish(int status, String invoice);
     }
-
-//    public static void main(String[] args) {
-//        Store store = new Store();
-//        store.createCatalogFromFile();
-//
-//        System.out.println("Current Catalog: \n");
-//        store.getCatalog().printCatalog();
-//        System.out.println("\nProcessing Transactoins: \n");
-//        
-//        
-//        POST post = new POST(store, store.getCatalog(), new Logger() {
-//            @Override
-//            public void output(String output) {
-//                outputToConsole(output);
-//                outputToFile("src/invoices.txt", output + '\n');
-//            }
-//        });
-//
-//        TransactionReader reader = new TransactionReader("src/Transactions/transactions.txt");
-//
-//        while (reader.hasValidTransaction()) {
-//            Transaction transaction = reader.getNextTransaction();
-//            post.send(transaction, new POSTCallback() {
-//                @Override
-//                public void onFinish(int status, String invoice) {
-//                    if (status == POST.STATUS_OK) {
-//
-//                    }
-//                }
-//            });
-//        }
-//    }
 }

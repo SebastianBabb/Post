@@ -4,8 +4,8 @@ public class Credit extends Payment {
 
     private final String number;
 
-    public Credit(int type, double amount, String number) {
-        super(type, amount);
+    public Credit(double amount, String number) {
+        super(amount);
         this.number = number;
     }
 

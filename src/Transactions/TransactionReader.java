@@ -1,5 +1,7 @@
 package Transactions;
 
+import Transactions.payment.Check;
+import Transactions.payment.Credit;
 import Transactions.payment.Payment;
 
 import java.io.*;
@@ -129,7 +131,20 @@ public class TransactionReader {
     Payment addPayment(String paymentString){
         Payment tempPayment;
         String paymentSplit[] = paymentString.split(" +");
-        tempPayment = new Payment(paymentSplit[0],Double.parseDouble(paymentSplit[1]));
+        String type = paymentSplit[0];
+
+        switch (type) {
+            case "CHECK":
+                tempPayment = new Check(Double.parseDouble(paymentSplit[1]));
+                break;
+            case "CREDIT":
+                tempPayment = new Credit(0, paymentSplit[1]);
+                break;
+            default:
+                tempPayment = new Payment();
+                break;
+        }
+
         return tempPayment;
     }
 }
