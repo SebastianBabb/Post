@@ -1,24 +1,30 @@
 package Client;
 
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
-import Transactions.Transaction;
 import Transactions.RemoteInterface;
-
+import java.rmi.RemoteException;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 
 public class PostGUIClient {
     private PostGUIClient() {}
     
-    public static void main(String[] args){
-        
-        try{
-            Registry registry = LocateRegistry.getRegistry(null);
-            RemoteInterface stub = (RemoteInterface) registry.lookup("RemoteInterface");
-            Transaction response = stub.getTransaction();
-        }catch(Exception e){
-            System.err.println("Client Exception: "+ e.toString());
-            e.printStackTrace();
-        }
+    public static void main(String[] args) throws NamingException, RemoteException {
+			Context namingContext = new InitialContext();
+
+			// Initialize a stub to make remote calls on.
+			RemoteInterface stub = (RemoteInterface)namingContext.lookup("rmi://localhost/remote_implementation");
+			// Make a call to remote object's testPrint() method.
+			System.out.println(stub.testPrint());
+			
+//        try{
+//            Registry registry = LocateRegistry.getRegistry(null);
+//            RemoteInterface stub = (RemoteInterface) registry.lookup("RemoteInterface");
+//            Transaction response = stub.getTransaction();
+//        }catch(Exception e){
+//            System.err.println("Client Exception: "+ e.toString());
+//            e.printStackTrace();
+//        }
     }
     
 }
