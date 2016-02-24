@@ -54,16 +54,16 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="upcLabel" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                  <Component id="cboItemList" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
+                  <Component id="cboItemList" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="qtyLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtQty" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="qtyLabel" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtQty" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="btnAddItem" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="17" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
