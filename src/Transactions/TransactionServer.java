@@ -26,13 +26,6 @@ public class TransactionServer {
 			// Bind the remote object to the registry.
 			Context namingContext = new InitialContext();
 			namingContext.bind("rmi:remote_implementation", remoteImplementation);
-			
-	//	    TransactionServer transactionServer = new TransactionServer();
-	//	    RemoteImplementation stub = (RemoteImplementation) UnicastRemoteObject.exportObject(transactionServer, 1099);
-
-			// Bind the remote object's stub in the registry
-	//	    Registry registry = LocateRegistry.getRegistry();
-	//	    registry.bind("Remote", );
 
 			System.err.println("Server ready...");
 		} catch (Exception e) {
