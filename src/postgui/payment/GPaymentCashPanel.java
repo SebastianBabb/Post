@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package postgui;
+package postgui.payment;
 
 /**
  *
@@ -29,7 +29,7 @@ public class GPaymentCashPanel extends javax.swing.JPanel {
 
         lblCash = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        btnPay = new javax.swing.JButton();
+        btnPayCash = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(338, 34));
         setMinimumSize(new java.awt.Dimension(338, 34));
@@ -42,10 +42,10 @@ public class GPaymentCashPanel extends javax.swing.JPanel {
         jTextField1.setMaximumSize(new java.awt.Dimension(58, 19));
         jTextField1.setMinimumSize(new java.awt.Dimension(58, 19));
 
-        btnPay.setText("Pay");
-        btnPay.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnPayCash.setText("Pay");
+        btnPayCash.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnPayMouseClicked(evt);
+                btnPayCashMouseClicked(evt);
             }
         });
 
@@ -59,7 +59,7 @@ public class GPaymentCashPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnPay, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnPayCash, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -68,17 +68,17 @@ public class GPaymentCashPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblCash, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPay, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, Short.MAX_VALUE)))
+                    .addComponent(btnPayCash, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnPayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPayMouseClicked
-        System.out.println("Pay button clicked");
-    }//GEN-LAST:event_btnPayMouseClicked
+    private void btnPayCashMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPayCashMouseClicked
+        System.out.println("Cash Pay button clicked");
+    }//GEN-LAST:event_btnPayCashMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnPay;
+    private javax.swing.JButton btnPayCash;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblCash;
     // End of variables declaration//GEN-END:variables

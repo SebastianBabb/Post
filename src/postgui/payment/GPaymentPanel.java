@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package postgui;
+package postgui.payment;
 
 import java.awt.BorderLayout;
 import java.awt.event.ItemEvent;
@@ -106,16 +106,16 @@ public class GPaymentPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cboPaymentTypeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboPaymentTypeItemStateChanged
+        
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             int indexSelected = this.cboPaymentType.getSelectedIndex();
             System.out.println(indexSelected);
             switch (indexSelected) {
                 case 0:
-                    this.jPaymentTypeSubPanel.removeAll();
-                    this.revalidate();
-                    this.repaint();
+                    this.removePaymentPanels();
                     break;
                 case 1:
+                    this.removePaymentPanels();
                     JPanel cashPanel = new GPaymentCashPanel();
                     cashPanel.setSize(338, 54);
                     cashPanel.setAlignmentX(LEFT_ALIGNMENT);
@@ -124,10 +124,22 @@ public class GPaymentPanel extends javax.swing.JPanel {
                     this.repaint();
                     break;
                 case 2:
-
+                    this.removePaymentPanels();
+                    JPanel creditPanel = new GPaymentCreditPanel();
+                    creditPanel.setSize(338, 54);
+                    creditPanel.setAlignmentX(LEFT_ALIGNMENT);
+                    this.jPaymentTypeSubPanel.add(creditPanel);
+                    this.revalidate();
+                    this.repaint();
                     break;
                 case 3:
-
+                    this.removePaymentPanels();
+                    JPanel checkPanel = new GPaymentCheckPanel();
+                    checkPanel.setSize(338, 54);
+                    checkPanel.setAlignmentX(LEFT_ALIGNMENT);
+                    this.jPaymentTypeSubPanel.add(checkPanel);
+                    this.revalidate();
+                    this.repaint();
                     break;
                 default:
                     System.err.println("Error invalid idex returned");
@@ -139,6 +151,11 @@ public class GPaymentPanel extends javax.swing.JPanel {
         this.PostFrame = jf;
     }
 
+    private void removePaymentPanels() {
+        this.jPaymentTypeSubPanel.removeAll();
+        this.revalidate();
+        this.repaint();
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PaymentPanel;
     private javax.swing.JComboBox cboPaymentType;

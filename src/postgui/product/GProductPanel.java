@@ -1,10 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package postgui;
+package postgui.product;
 
+import javax.swing.JOptionPane;
+import postgui.invoice.InvoicePanel;
 
 /**
  *
@@ -39,7 +36,7 @@ public class GProductPanel extends javax.swing.JPanel {
         upcLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         upcLabel.setText("UPC");
 
-        cboItemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1111 Wings 3.99", "1112 Shoes 54.99", "1113 Hats 34.99", "1114 Boxers 49.99" }));
+        cboItemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Item", "1111 Wings 3.99", "1112 Shoes 54.99", "1113 Hats 34.99", "1114 Boxers 49.99" }));
 
         qtyLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         qtyLabel.setText("Quantity");
@@ -105,21 +102,40 @@ public class GProductPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_txtQtyKeyReleased
 
     private void btnAddItemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddItemMouseClicked
+        if (this.cboItemList.getSelectedIndex() < 1) {
+            JOptionPane.showMessageDialog(this, "Must Select an Item.", "Item Selection Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (this.txtQty.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Must Select a Quantity.", "Quantity Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         String itm = (String) this.cboItemList.getSelectedItem();
         String qty = (String) this.txtQty.getText();
         String items[] = itm.split("\\s{1,}");
-        
-        if(items.length <  1 || qty.length() < 1) return;
+
+        if (items.length < 1 || qty.length() < 1) {
+            return;
+        }
         float prc = Float.parseFloat(items[2]);
         int qqty = Integer.parseInt(qty);
-        float n_prc = prc*qqty;
-        
-        String row = String.format("%-20s %-10s %-10s %-10s\n", items[1],qty,prc,n_prc);
-        this.inv_list.append(row);
+        float n_prc = prc * qqty;
+        this.inv_p.updateTotalLabel(n_prc);
+        String row = String.format("%-25s %-10s %13s %17s\n", items[1], qty, prc, n_prc);
+        this.inv_p.addItemToInvoice(row);
+        this.resetProductPanel();
+
     }//GEN-LAST:event_btnAddItemMouseClicked
 
-    public void attachInvoicePanel(javax.swing.JTextArea inv){
-        this.inv_list = inv;
+    private void resetProductPanel() {
+        this.txtQty.setText("");
+        this.cboItemList.setSelectedIndex(0);
+    }
+
+    public void attachInvoicePanel(javax.swing.JPanel ip) {;
+        this.inv_p = (InvoicePanel) ip;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddItem;
@@ -129,6 +145,7 @@ public class GProductPanel extends javax.swing.JPanel {
     private javax.swing.JLabel upcLabel;
     // End of variables declaration//GEN-END:variables
     private final String regex = "\\d+";
-    private javax.swing.JTextArea inv_list;
+    javax.swing.JPanel inv_panel;
+    private InvoicePanel inv_p;
 
 }

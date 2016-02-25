@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package postgui;
+package postgui.time;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -20,6 +20,7 @@ public class GTimePanel extends javax.swing.JPanel {
      */
     public GTimePanel() {
         initComponents();
+
     }
 
     /**
@@ -31,29 +32,39 @@ public class GTimePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblCurrentTime = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtCurrentTime = new javax.swing.JTextArea();
 
         setFont(new java.awt.Font("Dialog", 0, 10)); // NOI18N
 
-        lblCurrentTime.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        txtCurrentTime.setEditable(false);
+        txtCurrentTime.setColumns(25);
+        txtCurrentTime.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        txtCurrentTime.setLineWrap(true);
+        txtCurrentTime.setRows(2);
+        txtCurrentTime.setWrapStyleWord(true);
+        txtCurrentTime.setAutoscrolls(false);
+        txtCurrentTime.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        txtCurrentTime.setFocusable(false);
+        txtCurrentTime.setOpaque(false);
+        jScrollPane1.setViewportView(txtCurrentTime);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblCurrentTime, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(lblCurrentTime, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel lblCurrentTime;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtCurrentTime;
     // End of variables declaration//GEN-END:variables
 
     private final Thread updateTime = new Thread(new Runnable() {
@@ -61,7 +72,7 @@ public class GTimePanel extends javax.swing.JPanel {
         public void run() {
             while (true) {
                 curDT = tf.format(new Date());
-                lblCurrentTime.setText(curDT);
+                txtCurrentTime.setText(curDT);
                 try {
                     Thread.sleep(999);
                 } catch (InterruptedException ex) {

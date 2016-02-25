@@ -21,7 +21,7 @@ public final class GPost extends javax.swing.JFrame {
     }
     
     public void attachComponents(){
-        this.gProductPanel.attachInvoicePanel(this.gInvoiceListPanel.getInvoicePanel());
+        this.gProductPanel.attachInvoicePanel(this.gInvoiceListPanel.getPanel());
         this.gPaymentPanel.addFrameReference(this);
     }
     /**
@@ -33,16 +33,17 @@ public final class GPost extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        gPaymentPanel = new postgui.GPaymentPanel();
-        gPanelTime = new postgui.GTimePanel();
-        gInvoiceListPanel = new postgui.GInvoicePanel();
-        gProductPanel = new postgui.GProductPanel();
+        gPaymentPanel = new postgui.payment.GPaymentPanel();
+        gPanelTime = new postgui.time.GTimePanel();
+        gInvoiceListPanel = new postgui.invoice.GInvoicePanel();
+        gProductPanel = new postgui.product.GProductPanel();
         lblCustName = new javax.swing.JLabel();
         txtCustomerName = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("POST");
         setAlwaysOnTop(true);
+        setResizable(false);
 
         lblCustName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCustName.setText("Customer Name");
@@ -55,18 +56,19 @@ public final class GPost extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(gPanelTime, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(gPaymentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 417, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(83, 83, 83)
+                        .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblCustName, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                            .addComponent(lblCustName, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
                             .addComponent(txtCustomerName))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(gProductPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 12, Short.MAX_VALUE))
+                .addGap(0, 6, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(gInvoiceListPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -89,7 +91,9 @@ public final class GPost extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(gPaymentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(gPanelTime, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(gPanelTime, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
@@ -136,10 +140,10 @@ public final class GPost extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private postgui.GInvoicePanel gInvoiceListPanel;
-    private postgui.GTimePanel gPanelTime;
-    private postgui.GPaymentPanel gPaymentPanel;
-    private postgui.GProductPanel gProductPanel;
+    private postgui.invoice.GInvoicePanel gInvoiceListPanel;
+    private postgui.time.GTimePanel gPanelTime;
+    private postgui.payment.GPaymentPanel gPaymentPanel;
+    private postgui.product.GProductPanel gProductPanel;
     private javax.swing.JLabel lblCustName;
     private javax.swing.JTextField txtCustomerName;
     // End of variables declaration//GEN-END:variables
