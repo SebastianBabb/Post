@@ -1,6 +1,9 @@
 package StoreProducts;
 
+import RemoteInterfaces.ItemI;
 import java.io.Serializable;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,7 +14,7 @@ import java.io.Serializable;
  *
  * @author andre_000
  */
-public class Item implements Serializable {
+public class Item extends UnicastRemoteObject implements ItemI {
     
     String description;
     String UPC;
@@ -19,7 +22,7 @@ public class Item implements Serializable {
     int ID;
     
     
-    Item(){
+    Item()throws RemoteException {
         
         this.description = "no description";
         this.UPC = "0000";
@@ -27,7 +30,7 @@ public class Item implements Serializable {
         this.ID = 0;
     }
 
-    Item(String newUPC, String newDescr, double newPrice, int newID){
+    Item(String newUPC, String newDescr, double newPrice, int newID)throws RemoteException {
 
         this.description = newDescr;
         this.UPC = newUPC;
@@ -36,50 +39,53 @@ public class Item implements Serializable {
     }
     
     //GETTERS
-    public String getItemDescription(){
+    @Override
+    public String getItemDescription()throws RemoteException {
         
         return this.description;
     }
     
-    String getItemUPC(){
+    @Override
+    public String getItemUPC()throws RemoteException {
         
         return this.UPC;
        
     }
     
-    public double getItemPrice(){
+    @Override
+    public double getItemPrice()throws RemoteException {
         
         return this.price;
     }
     
-    int getItemID(){
+     public int getItemID(){
         
         return this.ID;
     }
     
     //SETTERS - return 1 if successful
-    int setItemDescription(String newDescr){
+    public int setItemDescription(String newDescr){
         
         this.description = newDescr;
         
         return 1; //success
     }
     
-    int setItemUPC(String newUPC){
+     public int setItemUPC(String newUPC){
         
         this.UPC = newUPC;
         
         return 1; //success
     }
     
-    int setItemPrice(double newPrice){
+     public int setItemPrice(double newPrice){
         
         this.price = newPrice;
         
         return 1; //success
     }
     
-    int setItemID(int newID){
+     public int setItemID(int newID){
         
         this.ID = newID;
         

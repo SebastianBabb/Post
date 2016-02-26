@@ -1,17 +1,21 @@
 package Transactions;
 
+import RemoteInterfaces.ItemLineI;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
 /**ItemLine is a class that contains a single item in the cart
  * and specifies the quantity of that item to be checked out.
  * @author Jrubin
  */
-public class ItemLine {
+public class ItemLine extends UnicastRemoteObject implements ItemLineI{
     private int quantity;
     private String UPC;
     
     /**
      * Construct a blank invalid item
      */
-    public ItemLine(){
+    public ItemLine() throws RemoteException {
         this.UPC=null;
         this.quantity=-1;
     }
@@ -20,7 +24,7 @@ public class ItemLine {
      * @param newUPC
      * @param newQuantity 
      */
-    public ItemLine(String newUPC, int newQuantity ){
+    public ItemLine(String newUPC, int newQuantity ) throws RemoteException {
         this.UPC=newUPC;
         this.quantity=newQuantity;
     }
@@ -52,15 +56,15 @@ public class ItemLine {
      * Takes a String representing a new UPC and sets UPC to this
      * @param newUPC 
      */
-    void setUPC(String newUPC){
+    public void setUPC(String newUPC) throws RemoteException {
         this.UPC= newUPC;
     }
     
     /**
-     * Sets the quantity of the item in this line to the input vlaue
+     * Sets the quantity of the item in this line to the input value
      * @param newQuantity 
      */
-    void setQuantity(int newQuantity){
+    public void setQuantity(int newQuantity) throws RemoteException {
         this.quantity = newQuantity;
     }
         

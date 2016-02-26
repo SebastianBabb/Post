@@ -1,13 +1,14 @@
 package main;
 
 import StoreProducts.Catalog;
-import StoreProducts.Item;
+import RemoteInterfaces.ItemI;
 import StoreProducts.Store;
 import Transactions.ItemLine;
-import Transactions.payment.Payment;
-import Transactions.Transaction;
+import Transactions.Invoice;
 import Transactions.payment.Check;
 import Transactions.payment.Credit;
+import RemoteInterfaces.PaymentI;
+import java.rmi.RemoteException;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -46,7 +47,7 @@ public class POST {
      * @param transaction
      * @param callback 
      */
-    public void send(Transaction transaction, POSTCallback callback) {
+    public void send(Invoice transaction, POSTCallback callback) throws RemoteException {
         if (isValidTransaction(transaction)) {
             String invoice = createInvoice(store.getStoreName(), transaction);
             logger.output(invoice);
@@ -64,7 +65,7 @@ public class POST {
      * @param transaction
      * @return invoice
      */
-    public String createInvoice(String storeName, Transaction transaction) {
+    public String createInvoice(String storeName, Invoice transaction) throws RemoteException {
         StringBuilder builder = new StringBuilder();
         builder.append(storeName);
         builder.append("\n\n");
@@ -93,7 +94,7 @@ public class POST {
             double subtotal = 0;
 
             if (catalog.UPCExists(upc)) {
-                Item item = catalog.getItem(upc);
+                ItemI item = catalog.getItem(upc);
 
                 description = item.getItemDescription();
                 price = item.getItemPrice();
@@ -116,7 +117,7 @@ public class POST {
         builder.append(format(COLUMN_WIDTH_C + COLUMN_WIDTH_R, String.format("$%.2f", total)));
         builder.append('\n');
 
-        Payment payment = transaction.getPayment();
+        PaymentI payment = transaction.getPayment();
         String tendered;
 
         if (payment instanceof Check) {
@@ -178,7 +179,7 @@ public class POST {
      * @param transaction
      * @return status of validity
      */
-    public boolean isValidTransaction(Transaction transaction) {
+    public boolean isValidTransaction(Invoice transaction) {
         return true;
     }
 

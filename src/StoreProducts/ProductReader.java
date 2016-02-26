@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -70,7 +71,7 @@ public class ProductReader {
     itemLine[2] = price
     
     */
-   Item getNextProduct(){
+   Item getNextProduct() throws RemoteException{
        String itemLine[] = curLine.split("\\s{2,}");
        
 //       System.out.println("itemLine: SIZE " + itemLine.length );
