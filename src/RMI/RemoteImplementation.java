@@ -86,7 +86,7 @@ public class RemoteImplementation extends UnicastRemoteObject implements RemoteI
 	}
 
 	@Override
-	public boolean sendPayment(Payment payment) {
+	public void sendPayment(Payment payment) {
 		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 	}
 
