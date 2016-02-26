@@ -31,6 +31,12 @@ public class GPaymentCreditPanel extends javax.swing.JPanel {
         txtCCNum = new javax.swing.JTextField();
         btnPayCredit = new javax.swing.JButton();
 
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                formKeyReleased(evt);
+            }
+        });
+
         lblCredit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCredit.setText("Credit Card Number");
         lblCredit.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -74,10 +80,21 @@ public class GPaymentCreditPanel extends javax.swing.JPanel {
         System.out.println("Credit Pay button clicked");
     }//GEN-LAST:event_btnPayCreditMouseClicked
 
+    private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
+        String tmp = this.txtCCNum.getText();
+        if (tmp.length() < 1) {
+            return;
+        }
+        if (!tmp.matches(this.regex)) {
+            this.txtCCNum.setText(tmp.substring(0, tmp.length() - 1));
+        }
+    }//GEN-LAST:event_formKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPayCredit;
     private javax.swing.JLabel lblCredit;
     private javax.swing.JTextField txtCCNum;
     // End of variables declaration//GEN-END:variables
+    private final String regex = "\\d+";
 }

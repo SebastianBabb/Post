@@ -38,6 +38,11 @@ public class GPaymentCheckPanel extends javax.swing.JPanel {
         txtAmount.setToolTipText("");
         txtAmount.setMaximumSize(new java.awt.Dimension(58, 19));
         txtAmount.setMinimumSize(new java.awt.Dimension(58, 19));
+        txtAmount.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtAmountKeyReleased(evt);
+            }
+        });
 
         btnPayCheck.setText("Pay");
         btnPayCheck.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -73,10 +78,21 @@ public class GPaymentCheckPanel extends javax.swing.JPanel {
         System.out.println("Check Pay button clicked");
     }//GEN-LAST:event_btnPayCheckMouseClicked
 
+    private void txtAmountKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAmountKeyReleased
+        String tmp = this.txtAmount.getText();
+        if (tmp.length() < 1) {
+            return;
+        }
+        if (!tmp.matches(this.regex)) {
+            this.txtAmount.setText(tmp.substring(0, tmp.length() - 1));
+        }
+    }//GEN-LAST:event_txtAmountKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPayCheck;
     private javax.swing.JLabel lblCheck;
     private javax.swing.JTextField txtAmount;
     // End of variables declaration//GEN-END:variables
+    private final String regex = "\\d+";
 }

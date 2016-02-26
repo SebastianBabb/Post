@@ -16,7 +16,7 @@ public interface InvoicePanel {
      * @param addedPrice new price to add to current 
      * running total.
      */
-    public void updateTotalLabel(float addedPrice);
+    public void updateTotalLabel(double addedPrice);
     
    
 }

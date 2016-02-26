@@ -1,11 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package postgui.payment;
 
-import java.awt.BorderLayout;
 import java.awt.event.ItemEvent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -163,4 +157,5 @@ public class GPaymentPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblPaymentType;
     // End of variables declaration//GEN-END:variables
     private JFrame PostFrame;
+    
 }

@@ -1,12 +1,15 @@
 package postgui.product;
 
+import Client.PostClient;
+import RemoteInterfaces.ItemI;
+import java.rmi.RemoteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import postgui.invoice.InvoicePanel;
 
-
 public class GProductPanel extends javax.swing.JPanel {
 
-    
     public GProductPanel() {
         initComponents();
     }
@@ -31,7 +34,7 @@ public class GProductPanel extends javax.swing.JPanel {
         upcLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         upcLabel.setText("UPC");
 
-        cboItemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Item", "1111 Wings 3.99", "1112 Shoes 54.99", "1113 Hats 34.99", "1114 Boxers 49.99" }));
+        cboItemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Item" }));
 
         qtyLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         qtyLabel.setText("Quantity");
@@ -106,25 +109,23 @@ public class GProductPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Must Select a Quantity.", "Quantity Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        /** NEEDS TO CHANGE ONCE RMI IS IN PLACE****/
+
         String itm = (String) this.cboItemList.getSelectedItem();
         String qty = (String) this.txtQty.getText();
-        String items[] = itm.split("\\s{1,}");
-
-        if (items.length < 1 || qty.length() < 1) {
-            return;
+        PostClient tmp_pc = PostClient.getInstance();
+        try {
+            ItemI tmp_itm = tmp_pc.getManager().getItem(itm);
+            double itm_prc = tmp_itm.getItemPrice();
+            String desc = tmp_itm.getItemDescription();
+            int qqty = Integer.parseInt(qty);
+            double n_prc = itm_prc * qqty;
+            this.inv_p.updateTotalLabel(n_prc);
+            String row = String.format("%-25s %-10s %13s %17s\n", desc, qty, itm_prc, n_prc);
+            this.inv_p.addItemToInvoice(row);
+            this.resetProductPanel();
+        } catch (RemoteException ex) {
+            Logger.getLogger(GProductPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
-        /**********End Change HERE**************/
-        
-        
-        float prc = Float.parseFloat(items[2]);
-        int qqty = Integer.parseInt(qty);
-        float n_prc = prc * qqty;
-        this.inv_p.updateTotalLabel(n_prc);
-        String row = String.format("%-25s %-10s %13s %17s\n", items[1], qty, prc, n_prc);
-        this.inv_p.addItemToInvoice(row);
-        this.resetProductPanel();
-
     }//GEN-LAST:event_btnAddItemMouseClicked
 
     private void resetProductPanel() {
@@ -132,7 +133,7 @@ public class GProductPanel extends javax.swing.JPanel {
         this.cboItemList.setSelectedIndex(0);
     }
 
-    public void attachInvoicePanel(javax.swing.JPanel ip) {;
+    public void attachInvoicePanel(javax.swing.JPanel ip) {
         this.inv_p = (InvoicePanel) ip;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -145,5 +146,11 @@ public class GProductPanel extends javax.swing.JPanel {
     private final String regex = "\\d+";
     javax.swing.JPanel inv_panel;
     private InvoicePanel inv_p;
+
+    public void loadUPClist(String[] list) {
+        for (String itm : list) {
+            this.cboItemList.addItem(itm);
+        }
+    }
 
 }

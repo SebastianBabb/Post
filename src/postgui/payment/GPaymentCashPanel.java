@@ -5,6 +5,8 @@
  */
 package postgui.payment;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author asouza
@@ -28,7 +30,7 @@ public class GPaymentCashPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         lblCash = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtAmount = new javax.swing.JTextField();
         btnPayCash = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(338, 34));
@@ -38,9 +40,14 @@ public class GPaymentCashPanel extends javax.swing.JPanel {
         lblCash.setText("Amount");
         lblCash.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jTextField1.setToolTipText("");
-        jTextField1.setMaximumSize(new java.awt.Dimension(58, 19));
-        jTextField1.setMinimumSize(new java.awt.Dimension(58, 19));
+        txtAmount.setToolTipText("");
+        txtAmount.setMaximumSize(new java.awt.Dimension(58, 19));
+        txtAmount.setMinimumSize(new java.awt.Dimension(58, 19));
+        txtAmount.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtAmountKeyReleased(evt);
+            }
+        });
 
         btnPayCash.setText("Pay");
         btnPayCash.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -57,7 +64,7 @@ public class GPaymentCashPanel extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblCash, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnPayCash, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -67,19 +74,34 @@ public class GPaymentCashPanel extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblCash, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtAmount, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnPayCash, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPayCashMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPayCashMouseClicked
-        System.out.println("Cash Pay button clicked");
+        if (this.txtAmount.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Must Give money.", "Cash Error", JOptionPane.ERROR_MESSAGE);
+        } else if (Integer.parseInt(this.txtAmount.getText()) < 0) {
+            JOptionPane.showMessageDialog(this, "Must Give positive amount for money.", "Cash Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnPayCashMouseClicked
+
+    private void txtAmountKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAmountKeyReleased
+         String tmp = this.txtAmount.getText();
+        if (tmp.length() < 1) {
+            return;
+        }
+        if (!tmp.matches(this.regex)) {
+            this.txtAmount.setText(tmp.substring(0, tmp.length() - 1));
+        }
+    }//GEN-LAST:event_txtAmountKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPayCash;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblCash;
+    private javax.swing.JTextField txtAmount;
     // End of variables declaration//GEN-END:variables
+    private final String regex = "\\d+";
 }

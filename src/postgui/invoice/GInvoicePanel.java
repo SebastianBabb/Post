@@ -114,7 +114,7 @@ public class GInvoicePanel extends javax.swing.JPanel implements InvoicePanel {
     }
 
     @Override
-    public void updateTotalLabel(float addedPrice) {
+    public void updateTotalLabel(double addedPrice) {
         float curTotal = Float.parseFloat(this.lblRunningTotal.getText());
         curTotal += addedPrice;
         this.lblRunningTotal.setText(String.format("%.2f", curTotal));

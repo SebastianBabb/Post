@@ -61,6 +61,9 @@
           <Dimension value="[58, 19]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtAmountKeyReleased"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnPayCheck">
       <Properties>
