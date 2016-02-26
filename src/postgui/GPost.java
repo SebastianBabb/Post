@@ -5,6 +5,7 @@
  */
 package postgui;
 
+
 /**
  *
  * @author Tony
@@ -24,6 +25,8 @@ public final class GPost extends javax.swing.JFrame {
         this.gProductPanel.attachInvoicePanel(this.gInvoiceListPanel.getPanel());
         this.gPaymentPanel.addFrameReference(this);
     }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -147,6 +150,8 @@ public final class GPost extends javax.swing.JFrame {
     private javax.swing.JLabel lblCustName;
     private javax.swing.JTextField txtCustomerName;
     // End of variables declaration//GEN-END:variables
+
+
     
 
 }

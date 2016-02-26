@@ -3,15 +3,10 @@ package postgui.product;
 import javax.swing.JOptionPane;
 import postgui.invoice.InvoicePanel;
 
-/**
- *
- * @author Tony
- */
+
 public class GProductPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form GProductPanel
-     */
+    
     public GProductPanel() {
         initComponents();
     }
@@ -111,7 +106,7 @@ public class GProductPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Must Select a Quantity.", "Quantity Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
+        /** NEEDS TO CHANGE ONCE RMI IS IN PLACE****/
         String itm = (String) this.cboItemList.getSelectedItem();
         String qty = (String) this.txtQty.getText();
         String items[] = itm.split("\\s{1,}");
@@ -119,6 +114,9 @@ public class GProductPanel extends javax.swing.JPanel {
         if (items.length < 1 || qty.length() < 1) {
             return;
         }
+        /**********End Change HERE**************/
+        
+        
         float prc = Float.parseFloat(items[2]);
         int qqty = Integer.parseInt(qty);
         float n_prc = prc * qqty;
