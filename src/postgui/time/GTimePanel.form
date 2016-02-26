@@ -43,7 +43,7 @@
             <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="25"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="12" style="1"/>
+              <Font name="Dialog" size="10" style="1"/>
             </Property>
             <Property name="lineWrap" type="boolean" value="true"/>
             <Property name="rows" type="int" value="2"/>

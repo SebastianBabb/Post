@@ -39,7 +39,7 @@ public class GTimePanel extends javax.swing.JPanel {
 
         txtCurrentTime.setEditable(false);
         txtCurrentTime.setColumns(25);
-        txtCurrentTime.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        txtCurrentTime.setFont(new java.awt.Font("Dialog", 1, 10)); // NOI18N
         txtCurrentTime.setLineWrap(true);
         txtCurrentTime.setRows(2);
         txtCurrentTime.setWrapStyleWord(true);
