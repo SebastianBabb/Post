@@ -52,10 +52,10 @@ public class RemoteImplementation extends UnicastRemoteObject implements RemoteI
 
 	@Override
 	public String getDateTime() throws RemoteException {
-        //get current date time with Date()
-        Date date = new Date();
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        return dateFormat.format(date);
+        	//get current date time with Date()
+        	Date date = new Date();
+        	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        	return dateFormat.format(date);
 	}
 
 	@Override
