@@ -1,6 +1,7 @@
 package Client;
 
 import RMI.RemoteInterface;
+import StoreProducts.Catalog;
 import java.rmi.RemoteException;
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -16,15 +17,13 @@ public class PostGUIClient {
 			RemoteInterface stub = (RemoteInterface)namingContext.lookup("rmi://localhost/remote_implementation");
 			// Make a call to remote object's testPrint() method.
 			System.out.println(stub.getStoreName());
-			
-//        try{
-//            Registry registry = LocateRegistry.getRegistry(null);
-//            RemoteInterface stub = (RemoteInterface) registry.lookup("RemoteInterface");
-//            Transaction response = stub.getTransaction();
-//        }catch(Exception e){
-//            System.err.println("Client Exception: "+ e.toString());
-//            e.printStackTrace();
-//        }
+			System.out.println(stub.getStoreAddress());
+			Catalog c = stub.getCatalog();
+			c.printCatalog();
+			if(stub.UPCExists("1116")) {
+				System.out.println(stub.getItem("1116"));
+			} else {
+				System.out.println("UPC 1116J DOES NOT EXIST!");
+			}
     }
-    
 }

@@ -3,18 +3,16 @@ package RMI;
 import RMI.RemoteImplementation;
 import java.rmi.registry.Registry;
 import java.rmi.registry.LocateRegistry;
-import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
 import javax.naming.Context;
 import javax.naming.InitialContext;
-
-/**
+		
+/*
  * Start the server before running the client.
  * 
  * @author Jrubin
  */
 public class TransactionServer {
-    
+	
     public TransactionServer() {}
 	
     public static void main(String args[]) {
@@ -32,7 +30,7 @@ public class TransactionServer {
 		} catch (Exception e) {
 			System.err.println("Server exception: " + e.toString());
 			e.printStackTrace();
-	}
+		}
     }
     
 }

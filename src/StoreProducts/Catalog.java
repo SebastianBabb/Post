@@ -89,7 +89,7 @@ public class Catalog implements Serializable {
     }
     
     //UPC list for GUI
-    String[] getUPCList(){
+    public String[] getUPCList(){
         String rUPCList[] = new String[this.numProducts]; //upc list to return
         
         //create UPC list with proper size (SHRINKING)

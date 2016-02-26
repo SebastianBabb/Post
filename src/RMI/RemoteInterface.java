@@ -23,10 +23,9 @@ public interface RemoteInterface extends Remote {
     String[] getUPCList() throws RemoteException;
 
 	// Trancsaction methods.
-	public boolean sendTransaction(Transaction transaction) throws RemoteException;
-	public boolean sendPayment(Payment payment) throws RemoteException;
-	public StoreProducts.Catalog getCatalog() throws RemoteException;
-	public boolean upcExist() throws RemoteException;
-	public String getItemUPC(Item item) throws RemoteException;
-	
+	public void sendTransaction(Transaction transaction) throws RemoteException;
+	public void sendPayment(Payment payment) throws RemoteException;
+	public Catalog getCatalog() throws RemoteException;
+	public boolean upcExist(String upc) throws RemoteException;
+	public String getItemUPC(int id) throws RemoteException;
 }

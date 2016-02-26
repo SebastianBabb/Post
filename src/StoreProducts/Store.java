@@ -29,8 +29,7 @@ public class Store {
     //DEFAULT CONSTRUCTOR
     public Store(){
         this.storeName = "General Store";
-        this.storeAddress = "100 Main Stree";
-        
+        this.storeAddress = "100 Main Street";
     }
     
     //SECONDARY CONSTRUCTOR
@@ -57,7 +56,7 @@ public class Store {
     }
     
     //store addr getter
-    String getStoreAddress(){
+    public String getStoreAddress(){
         
         return this.storeAddress;
     }
