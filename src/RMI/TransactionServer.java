@@ -1,5 +1,6 @@
-package Transactions;
+package RMI;
 
+import RMI.RemoteImplementation;
 import java.rmi.registry.Registry;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.RemoteException;

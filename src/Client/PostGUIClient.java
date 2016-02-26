@@ -1,6 +1,6 @@
 package Client;
 
-import Transactions.RemoteInterface;
+import RMI.RemoteInterface;
 import java.rmi.RemoteException;
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -15,7 +15,7 @@ public class PostGUIClient {
 			// Initialize a stub to make remote calls on.
 			RemoteInterface stub = (RemoteInterface)namingContext.lookup("rmi://localhost/remote_implementation");
 			// Make a call to remote object's testPrint() method.
-			System.out.println(stub.testPrint());
+			System.out.println(stub.getStoreName());
 			
 //        try{
 //            Registry registry = LocateRegistry.getRegistry(null);
