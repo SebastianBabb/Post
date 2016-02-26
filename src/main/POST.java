@@ -64,7 +64,7 @@ public class POST {
      * @param transaction
      * @return invoice
      */
-    private String createInvoice(String storeName, Transaction transaction) {
+    public String createInvoice(String storeName, Transaction transaction) {
         StringBuilder builder = new StringBuilder();
         builder.append(storeName);
         builder.append("\n\n");

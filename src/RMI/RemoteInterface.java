@@ -24,7 +24,7 @@ public interface RemoteInterface extends Remote {
 
 	// Trancsaction methods.
 	public void sendTransaction(Transaction transaction) throws RemoteException;
-	public void sendPayment(Payment payment) throws RemoteException;
+	public String createInvoice(String storeName, Transaction transaction) throws RemoteException;
 	public Catalog getCatalog() throws RemoteException;
 	public boolean upcExist(String upc) throws RemoteException;
 	public String getItemUPC(int id) throws RemoteException;
