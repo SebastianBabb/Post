@@ -5,7 +5,13 @@
  */
 package postgui.payment;
 
+import Transactions.payment.Cash;
+import Transactions.payment.Payment;
+import java.rmi.RemoteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -16,8 +22,9 @@ public class GPaymentCashPanel extends javax.swing.JPanel {
     /**
      * Creates new form GPayamentCash
      */
-    public GPaymentCashPanel() {
+    public GPaymentCashPanel(JPanel parent) {
         initComponents();
+        this.parent = (GPaymentPanel) parent;
     }
 
     /**
@@ -82,20 +89,31 @@ public class GPaymentCashPanel extends javax.swing.JPanel {
     private void btnPayCashMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPayCashMouseClicked
         if (this.txtAmount.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Must Give money.", "Cash Error", JOptionPane.ERROR_MESSAGE);
-        } else if (Integer.parseInt(this.txtAmount.getText()) < 0) {
+            return;
+        } else if (Double.parseDouble(this.txtAmount.getText()) < 0) {
             JOptionPane.showMessageDialog(this, "Must Give positive amount for money.", "Cash Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
+        try {
+            double amnt_given;
+            amnt_given = Double.parseDouble(this.txtAmount.getText());
+            Payment cp = new Cash(amnt_given);
+            this.parent.sendPaymentToFrame(cp);
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Invalid Cash Error.", "Invalid Error", JOptionPane.ERROR_MESSAGE);
+        } catch (RemoteException ex) {
+
+        }
+
     }//GEN-LAST:event_btnPayCashMouseClicked
 
     private void txtAmountKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAmountKeyReleased
-         String tmp = this.txtAmount.getText();
-        if (tmp.length() < 1) {
-            return;
-        }
-        if (!tmp.matches(this.regex)) {
-            this.txtAmount.setText(tmp.substring(0, tmp.length() - 1));
-        }
+
     }//GEN-LAST:event_txtAmountKeyReleased
+
+    public double getAmount() {
+        return Double.parseDouble(this.txtAmount.getText());
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -104,4 +122,5 @@ public class GPaymentCashPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtAmount;
     // End of variables declaration//GEN-END:variables
     private final String regex = "\\d+";
+    private final GPaymentPanel parent;
 }

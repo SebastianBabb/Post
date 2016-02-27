@@ -5,6 +5,14 @@
  */
 package postgui.payment;
 
+import Transactions.payment.Check;
+import Transactions.payment.Payment;
+import java.rmi.RemoteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Tony
@@ -14,8 +22,9 @@ public class GPaymentCheckPanel extends javax.swing.JPanel {
     /**
      * Creates new form GPaymentCheckPanel
      */
-    public GPaymentCheckPanel() {
+    public GPaymentCheckPanel(JPanel parent) {
         initComponents();
+        this.parent = (GPaymentPanel) parent;
     }
 
     /**
@@ -75,7 +84,22 @@ public class GPaymentCheckPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPayCheckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPayCheckMouseClicked
-        System.out.println("Check Pay button clicked");
+        if (this.txtAmount.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Invalid Check Amount.", "Check Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        } else if (Integer.parseInt(this.txtAmount.getText()) < 0) {
+            JOptionPane.showMessageDialog(this, "Mus give Positive Check Amount.", "Check Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        try {
+            double amnt_given = Double.parseDouble(this.txtAmount.getText());
+            Payment cp = new Check(amnt_given);
+            this.parent.sendPaymentToFrame(cp);
+        } catch (NumberFormatException ex) {
+
+        } catch (RemoteException ex) {
+            Logger.getLogger(GPaymentCheckPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnPayCheckMouseClicked
 
     private void txtAmountKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAmountKeyReleased
@@ -86,6 +110,7 @@ public class GPaymentCheckPanel extends javax.swing.JPanel {
         if (!tmp.matches(this.regex)) {
             this.txtAmount.setText(tmp.substring(0, tmp.length() - 1));
         }
+
     }//GEN-LAST:event_txtAmountKeyReleased
 
 
@@ -95,4 +120,5 @@ public class GPaymentCheckPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtAmount;
     // End of variables declaration//GEN-END:variables
     private final String regex = "\\d+";
+    private final GPaymentPanel parent;
 }

@@ -5,18 +5,21 @@
  */
 package RemoteInterfaces;
 
+import Transactions.Invoice;
 import java.rmi.RemoteException;
 
 /**
  *
- * @author asouza
+ * @author Tony
  */
-public interface PaymentI extends java.rmi.Remote {
+public interface POSTI extends java.rmi.Remote {
     /**
      * 
-     * @return 
-     * @throws java.rmi.RemoteException 
+     * @param storeName
+     * @param invoice
+     * @return
+     * @throws RemoteException 
      */
-    public double getAmount() throws RemoteException;
-    
+    public String createInvoice(String storeName, InvoiceI invoice) throws RemoteException;
+
 }

@@ -2,7 +2,9 @@ package postgui.product;
 
 import Client.PostClient;
 import RemoteInterfaces.ItemI;
+import Transactions.ItemLine;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -12,6 +14,7 @@ public class GProductPanel extends javax.swing.JPanel {
 
     public GProductPanel() {
         initComponents();
+        this.itms =  new ArrayList<>();
     }
 
     /**
@@ -120,7 +123,8 @@ public class GProductPanel extends javax.swing.JPanel {
             int qqty = Integer.parseInt(qty);
             double n_prc = itm_prc * qqty;
             this.inv_p.updateTotalLabel(n_prc);
-            String row = String.format("%-25s %-10s %13s %17s\n", desc, qty, itm_prc, n_prc);
+            String row = String.format("%-25s %-10s %13s %17.2f\n", desc, qty, itm_prc, n_prc);
+            this.itms.add(new ItemLine(itm,qqty));
             this.inv_p.addItemToInvoice(row);
             this.resetProductPanel();
         } catch (RemoteException ex) {
@@ -146,7 +150,21 @@ public class GProductPanel extends javax.swing.JPanel {
     private final String regex = "\\d+";
     javax.swing.JPanel inv_panel;
     private InvoicePanel inv_p;
-
+    private ArrayList<ItemLine> itms;
+    
+    public void emptyItemList(){
+        this.itms.clear();
+    }
+    
+    public ItemLine[] arrListToArray(){
+        ItemLine[] tmp =  new ItemLine[this.itms.size()];
+        int i =0;
+        for(ItemLine il : this.itms){
+            tmp[i] = il;
+            i++;
+        }
+        return tmp;
+    }
     public void loadUPClist(String[] list) {
         for (String itm : list) {
             this.cboItemList.addItem(itm);

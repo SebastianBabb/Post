@@ -5,6 +5,14 @@
  */
 package postgui.payment;
 
+import Transactions.payment.Credit;
+import Transactions.payment.Payment;
+import java.rmi.RemoteException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Tony
@@ -14,8 +22,9 @@ public class GPaymentCreditPanel extends javax.swing.JPanel {
     /**
      * Creates new form GPaymentCreditPanel
      */
-    public GPaymentCreditPanel() {
+    public GPaymentCreditPanel(JPanel parent) {
         initComponents();
+        this.parent = (GPaymentPanel) parent;
     }
 
     /**
@@ -77,7 +86,18 @@ public class GPaymentCreditPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPayCreditMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPayCreditMouseClicked
-        System.out.println("Credit Pay button clicked");
+        if (this.txtCCNum.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Must Give money.", "Cash Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        String cc_num = this.txtCCNum.getText();
+        Payment cp = null;
+        try {
+            cp = new Credit(0, cc_num);
+        } catch (RemoteException ex) {
+            Logger.getLogger(GPaymentCreditPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.parent.sendPaymentToFrame(cp);
     }//GEN-LAST:event_btnPayCreditMouseClicked
 
     private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
@@ -88,6 +108,8 @@ public class GPaymentCreditPanel extends javax.swing.JPanel {
         if (!tmp.matches(this.regex)) {
             this.txtCCNum.setText(tmp.substring(0, tmp.length() - 1));
         }
+
+
     }//GEN-LAST:event_formKeyReleased
 
 
@@ -97,4 +119,5 @@ public class GPaymentCreditPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtCCNum;
     // End of variables declaration//GEN-END:variables
     private final String regex = "\\d+";
+    private final GPaymentPanel parent;
 }

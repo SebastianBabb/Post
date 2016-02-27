@@ -1,8 +1,11 @@
 package postgui.payment;
 
+import RemoteInterfaces.PaymentI;
+import Transactions.payment.Payment;
 import java.awt.event.ItemEvent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import postgui.GPost;
 
 /**
  *
@@ -15,6 +18,7 @@ public class GPaymentPanel extends javax.swing.JPanel {
      */
     public GPaymentPanel() {
         initComponents();
+
     }
 
     /**
@@ -100,51 +104,45 @@ public class GPaymentPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cboPaymentTypeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboPaymentTypeItemStateChanged
-        
+
         if (evt.getStateChange() == ItemEvent.SELECTED) {
             int indexSelected = this.cboPaymentType.getSelectedIndex();
             System.out.println(indexSelected);
+            this.removePaymentPanels();
             switch (indexSelected) {
                 case 0:
                     this.removePaymentPanels();
-                    break;
+                    return;
                 case 1:
                     this.removePaymentPanels();
-                    JPanel cashPanel = new GPaymentCashPanel();
-                    cashPanel.setSize(338, 54);
-                    cashPanel.setAlignmentX(LEFT_ALIGNMENT);
-                    this.jPaymentTypeSubPanel.add(cashPanel);
-                    this.revalidate();
-                    this.repaint();
+                    this.currentSubPanel = new GPaymentCashPanel(this);
                     break;
                 case 2:
-                    this.removePaymentPanels();
-                    JPanel creditPanel = new GPaymentCreditPanel();
-                    creditPanel.setSize(338, 54);
-                    creditPanel.setAlignmentX(LEFT_ALIGNMENT);
-                    this.jPaymentTypeSubPanel.add(creditPanel);
-                    this.revalidate();
-                    this.repaint();
+                    this.currentSubPanel = new GPaymentCreditPanel(this);   
                     break;
                 case 3:
                     this.removePaymentPanels();
-                    JPanel checkPanel = new GPaymentCheckPanel();
-                    checkPanel.setSize(338, 54);
-                    checkPanel.setAlignmentX(LEFT_ALIGNMENT);
-                    this.jPaymentTypeSubPanel.add(checkPanel);
-                    this.revalidate();
-                    this.repaint();
+                    this.currentSubPanel = new GPaymentCheckPanel(this);
                     break;
                 default:
                     System.err.println("Error invalid idex returned");
-
             }
+            this.currentSubPanel.setSize(338, 54);
+            this.currentSubPanel.setAlignmentX(LEFT_ALIGNMENT);
+            this.jPaymentTypeSubPanel.add(this.currentSubPanel);
+            this.revalidate();
+            this.repaint();
+
         }
     }//GEN-LAST:event_cboPaymentTypeItemStateChanged
     public void addFrameReference(JFrame jf) {
-        this.PostFrame = jf;
+        this.PostFrame = (GPost) jf;
     }
-
+    
+    public void sendPaymentToFrame(Payment p){
+        this.PostFrame.recievePaymentFromPanel(p);
+        
+    }
     private void removePaymentPanels() {
         this.jPaymentTypeSubPanel.removeAll();
         this.revalidate();
@@ -156,6 +154,7 @@ public class GPaymentPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPaymentTypeSubPanel;
     private javax.swing.JLabel lblPaymentType;
     // End of variables declaration//GEN-END:variables
-    private JFrame PostFrame;
-    
+    private GPost PostFrame;
+    private JPanel currentSubPanel;
+
 }

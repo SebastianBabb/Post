@@ -7,10 +7,16 @@ package postgui;
 
 import Client.PostClient;
 import RemoteInterfaces.ManagerI;
+import RemoteInterfaces.PaymentI;
+import Transactions.Customer;
+import Transactions.Invoice;
+import Transactions.ItemLine;
+import Transactions.payment.Payment;
 import java.rmi.RemoteException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,14 +32,12 @@ public final class GPost extends javax.swing.JFrame {
         this.gPanelTime.startTimer();
         this.attachComponents();
     }
-    
-    public void attachComponents(){
+
+    public void attachComponents() {
         this.gProductPanel.attachInvoicePanel(this.gInvoiceListPanel.getPanel());
         this.gPaymentPanel.addFrameReference(this);
     }
-    
-    
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -110,8 +114,8 @@ public final class GPost extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void init(){
-         /* Set the Nimbus look and feel */
+    public void init() {
+        /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -131,17 +135,10 @@ public final class GPost extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(GPost.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(GPost.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+
         }
         //</editor-fold>
         //</editor-fold>
-
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            @Override
-//            public void run() {
-//                new GPost().setVisible(true);
-//            }
-//        });
     }
     /**
      * @param args the command line arguments
@@ -199,8 +196,8 @@ public final class GPost extends javax.swing.JFrame {
     public void setPc(PostClient pc) {
         this.pc = pc;
     }
-    
-    public void retrieveUPCList(){
+
+    public void retrieveUPCList() {
         try {
             ManagerI mi = (ManagerI) this.pc.getManager();
             String[] list = mi.getCatalog().getUPCList();
@@ -210,7 +207,39 @@ public final class GPost extends javax.swing.JFrame {
         }
     }
 
+    /**
+     *
+     * @param p
+     */
+    public void recievePaymentFromPanel(Payment p) {
+        this.sendInvoiceToRemote(p);
+    }
     
-
+    private void sendInvoiceToRemote(Payment p){
+        String name = this.txtCustomerName.getText();
+        ItemLine[] items = this.gProductPanel.arrListToArray();
+        
+        if(name.equals("")){
+            JOptionPane.showMessageDialog(this, "Must Give Customer Name.", "Customer Name", JOptionPane.ERROR_MESSAGE);
+            return;
+        }else if(items.length < 1){
+            JOptionPane.showMessageDialog(this, "Must Add items before paying.", "Empty Invoice", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        try {
+            Invoice curInv = new Invoice(new Customer(name),items, p,items.length);
+            ManagerI mgr = (ManagerI) this.pc.getManager();
+            String sname = mgr.getStorename();
+            
+            String inv_back = mgr.getStorePOS().createInvoice(sname, curInv);
+            GInvoiceFrame f_inv = new GInvoiceFrame();
+            f_inv.passInvString(inv_back);
+            f_inv.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            f_inv.setVisible(true);
+            f_inv.setAlwaysOnTop(true);
+        } catch (RemoteException ex) {
+            Logger.getLogger(GPost.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
-

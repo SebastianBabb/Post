@@ -1,6 +1,6 @@
 package RemoteInterfaces;
 
-
+import Transactions.ItemLine;
 import java.rmi.RemoteException;
 
 /**
@@ -19,6 +19,13 @@ public interface InvoiceI extends java.rmi.Remote {
      */
     public ItemLineI[] getItemList() throws RemoteException;
 
+    /**
+     * 
+     * @param i
+     * @return
+     * @throws RemoteException 
+     */
+    public ItemLineI getItemLineAtIndex(int i) throws RemoteException;
     /**
      * Returns the payment for this transaction
      *
@@ -69,6 +76,5 @@ public interface InvoiceI extends java.rmi.Remote {
      */
     public void setPayment(PaymentI newPayment) throws RemoteException;
 
-    
 
-    }
+}
