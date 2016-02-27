@@ -11,7 +11,7 @@ import java.rmi.RemoteException;
  *
  * @author asouza
  */
-public interface ItemI extends java.rmi.Remote {
+public interface IItem extends java.rmi.Remote {
 
     /**
      * 

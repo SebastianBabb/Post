@@ -12,7 +12,7 @@ import java.rmi.RemoteException;
  *
  * @author Tony
  */
-public interface POSTI extends java.rmi.Remote {
+public interface IPOST extends java.rmi.Remote {
     /**
      * 
      * @param storeName
@@ -20,6 +20,6 @@ public interface POSTI extends java.rmi.Remote {
      * @return
      * @throws RemoteException 
      */
-    public String createInvoice(String storeName, InvoiceI invoice) throws RemoteException;
+    public String createInvoice(String storeName, IInvoice invoice) throws RemoteException;
 
 }

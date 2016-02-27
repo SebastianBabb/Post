@@ -1,14 +1,21 @@
 package main;
 
+import RemoteInterfaces.ICash;
+import RemoteInterfaces.ICheck;
+import RemoteInterfaces.ICredit;
+import RemoteInterfaces.IInvoice;
 import StoreProducts.Catalog;
-import RemoteInterfaces.ItemI;
+import RemoteInterfaces.IItem;
+import RemoteInterfaces.IItemLine;
 import StoreProducts.Store;
-import Transactions.ItemLine;
 import Transactions.Invoice;
 import Transactions.payment.Check;
 import Transactions.payment.Credit;
-import RemoteInterfaces.PaymentI;
+import RemoteInterfaces.IPayment;
+import RemoteInterfaces.IPOST;
+import Transactions.payment.Cash;
 import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -22,7 +29,7 @@ import java.util.Random;
  *
  * @author Gary Ng
  */
-public class POST {
+public class POST extends UnicastRemoteObject implements IPOST {
 
     private static final int COLUMN_WIDTH_L = -20;
     private static final int COLUMN_WIDTH_C = 10;
@@ -35,7 +42,7 @@ public class POST {
     private final Catalog catalog;
     private final Logger logger;
 
-    public POST(Store store, Logger logger) {
+    public POST(Store store, Logger logger) throws RemoteException {
         this.store = store;
         this.catalog = store.getCatalog();
         this.logger = logger;
@@ -43,9 +50,10 @@ public class POST {
 
     /**
      * Receives a transaction from an external caller
-     * 
+     *
      * @param transaction
-     * @param callback 
+     * @param callback
+     * @throws java.rmi.RemoteException
      */
     public void send(Invoice transaction, POSTCallback callback) throws RemoteException {
         if (isValidTransaction(transaction)) {
@@ -60,17 +68,17 @@ public class POST {
 
     /**
      * Generates an invoice using a transaction.
-     * 
+     *
      * @param storeName
-     * @param transaction
+     * @param invoice
      * @return invoice
+     * @throws java.rmi.RemoteException
      */
-    public String createInvoice(String storeName, Invoice transaction) throws RemoteException {
+    public String createInvoice(String storeName, IInvoice invoice) throws RemoteException {
         StringBuilder builder = new StringBuilder();
         builder.append(storeName);
         builder.append("\n\n");
-
-        String name = transaction.getCustomer().getName();
+        String name = invoice.getCustomer().getName();
 
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/y h:mm a");
@@ -80,21 +88,23 @@ public class POST {
         builder.append('\n');
 
         float total = 0;
-
-        for (ItemLine itemLine : transaction.getItemList()) {
-            if (itemLine == null) {
+        IItemLine tmp_li;
+        int size = invoice.getCartSize();
+        for (int i = 0; i < size; i++) {
+            tmp_li = invoice.getItemLineAtIndex(i);
+            if (tmp_li == null) {
                 break;
             }
 
-            String upc = itemLine.getUPC();
-            int quantity = itemLine.getQuantity();
-            
+            String upc = tmp_li.getUPC();
+            int quantity = tmp_li.getQuantity();
+
             String description;
             double price = 0;
             double subtotal = 0;
 
             if (catalog.UPCExists(upc)) {
-                ItemI item = catalog.getItem(upc);
+                IItem item = catalog.getItem(upc);
 
                 description = item.getItemDescription();
                 price = item.getItemPrice();
@@ -102,12 +112,8 @@ public class POST {
             } else {
                 description = String.format("??? [UPC %s]", upc);
             }
-
-            builder.append(format(COLUMN_WIDTH_L, description));
-            builder.append(format(COLUMN_WIDTH_C, String.format("%d @ %.2f", quantity, price)));
-            builder.append(format(COLUMN_WIDTH_R, String.format("%.2f", subtotal)));
-            builder.append('\n');
-
+        
+            builder.append(String.format("%-25s %4s @ %8.2f   %8.2f\n",description, quantity, price, subtotal));
             total += subtotal;
         }
 
@@ -117,21 +123,21 @@ public class POST {
         builder.append(format(COLUMN_WIDTH_C + COLUMN_WIDTH_R, String.format("$%.2f", total)));
         builder.append('\n');
 
-        PaymentI payment = transaction.getPayment();
-        String tendered;
+        IPayment payment =  invoice.getPayment();
+        String tendered = "";
 
-        if (payment instanceof Check) {
+        if (payment instanceof ICheck) {
             tendered = "Paid by Check";
-        } else if (payment instanceof Credit) {
-            Credit credit = (Credit) payment;
+        } else if (payment instanceof ICredit) {
+            ICredit credit = (ICredit) payment;
             tendered = String.format("Credit Card %s", credit.getNumber());
-        } else {
+        } else if( payment instanceof ICash) {
             tendered = String.format("$%.2f", payment.getAmount());
         }
 
         String returned = String.format("$%.2f", payment.getAmount() - total);
 
-        if (payment instanceof Credit) {
+        if (payment instanceof ICredit) {
             builder.append(format(COLUMN_WIDTH_L, "Paid with:"));
             builder.append(format(COLUMN_WIDTH_C + COLUMN_WIDTH_R, tendered));
             builder.append('\n');
@@ -149,13 +155,13 @@ public class POST {
             builder.append(format(COLUMN_WIDTH_C + COLUMN_WIDTH_R, returned));
             builder.append('\n');
         }
-
+        System.out.println(builder.toString());
         return builder.toString();
     }
 
     /**
      * Wrapper function to simplify white space padding for any given strings.
-     * 
+     *
      * @param width
      * @param value
      * @return padded string
@@ -164,18 +170,19 @@ public class POST {
         return String.format("%1$" + width + "s", value);
     }
 
-    /**Simulating 10% credit card decline
-     * 
+    /**
+     * Simulating 10% credit card decline
+     *
      * @return false 10% of time
      */
-    public boolean creditCardApproved(){
+    public boolean creditCardApproved() {
         Random rn = new Random();
         return rn.nextInt(10) > 0;  //if random number == 0, decline (10% to roll 0)
     }
-    
+
     /**
      * Checks if transaction is valid before processing.
-     * 
+     *
      * @param transaction
      * @return status of validity
      */

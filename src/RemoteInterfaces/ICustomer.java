@@ -5,18 +5,14 @@
  */
 package RemoteInterfaces;
 
-import java.rmi.RemoteException;
-
 /**
  *
  * @author asouza
  */
-public interface PaymentI extends java.rmi.Remote {
-    /**
-     * 
-     * @return 
-     * @throws java.rmi.RemoteException 
-     */
-    public double getAmount() throws RemoteException;
-    
+public interface ICustomer extends java.rmi.Remote {
+
+    public String getName() throws java.rmi.RemoteException;
+
+    public void setName(String name) throws java.rmi.RemoteException;
+
 }

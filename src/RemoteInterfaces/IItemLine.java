@@ -11,7 +11,7 @@ import java.rmi.RemoteException;
  *
  * @author asouza
  */
-public interface ItemLineI extends java.rmi.Remote {
+public interface IItemLine extends java.rmi.Remote {
 
     /**
      * Returns the UPC of the item in this line

@@ -1,20 +1,20 @@
 package Transactions;
 
-import RemoteInterfaces.CustomerI;
-import RemoteInterfaces.InvoiceI;
-import RemoteInterfaces.ItemLineI;
+import RemoteInterfaces.ICustomer;
+import RemoteInterfaces.IInvoice;
+import RemoteInterfaces.IItemLine;
 import Transactions.payment.Payment;
-import RemoteInterfaces.PaymentI;
+import RemoteInterfaces.IPayment;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
 /**
- * Invoice class Takes a Customer, Array of LineItems and Payment type to
- create a whole Invoice.
+ * Invoice class Takes a Customer, Array of LineItems and Payment type to create
+ * a whole Invoice.
  *
  * @author Jrubin
  */
-public class Invoice extends UnicastRemoteObject implements InvoiceI {
+public class Invoice extends UnicastRemoteObject implements IInvoice {
 
     private static final int MAX_LINES = 100;
 
@@ -35,6 +35,13 @@ public class Invoice extends UnicastRemoteObject implements InvoiceI {
         this.numOfLines = 0;
         this.payment = new Payment();
 
+    }
+
+    public Invoice(Customer customer, ItemLine[] lineItems, Payment payment, int numOfLines) throws RemoteException {
+        this.customer = customer;
+        this.lineItems = lineItems;
+        this.payment = payment;
+        this.numOfLines = numOfLines;
     }
 
     /**
@@ -75,8 +82,14 @@ public class Invoice extends UnicastRemoteObject implements InvoiceI {
      * @return payment type
      */
     @Override
-    public PaymentI getPayment() {
-        return (PaymentI) this.payment;
+    public IPayment getPayment() {
+        return this.payment;
+    }
+    
+    @Override
+    public IItemLine getItemLineAtIndex(int i){
+        if(i >= this.numOfLines) return null;
+        return this.lineItems[i];
     }
 
     /**
@@ -104,7 +117,7 @@ public class Invoice extends UnicastRemoteObject implements InvoiceI {
      *
      * @param newCustomer
      */
-    public void setCustomer(CustomerI newCustomer) throws RemoteException {
+    public void setCustomer(ICustomer newCustomer) throws RemoteException {
         this.customer = (Customer) newCustomer;
     }
 
@@ -113,7 +126,7 @@ public class Invoice extends UnicastRemoteObject implements InvoiceI {
      *
      * @param newLn
      */
-    public void addItemLine(ItemLineI newLn) throws RemoteException {
+    public void addItemLine(IItemLine newLn) throws RemoteException {
         this.lineItems[numOfLines] = (ItemLine) newLn;
         this.numOfLines++;
     }
@@ -123,7 +136,7 @@ public class Invoice extends UnicastRemoteObject implements InvoiceI {
      *
      * @param newPayment
      */
-    public void setPayment(PaymentI newPayment) throws RemoteException {
+    public void setPayment(IPayment newPayment) throws RemoteException {
         this.payment = (Payment) newPayment;
     }
 

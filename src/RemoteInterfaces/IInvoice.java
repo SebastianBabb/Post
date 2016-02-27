@@ -7,9 +7,9 @@ import java.rmi.RemoteException;
  *
  * @author asouza
  */
-public interface InvoiceI extends java.rmi.Remote {
+public interface IInvoice extends java.rmi.Remote {
 
-    public CustomerI getCustomer() throws RemoteException;
+    public ICustomer getCustomer() throws RemoteException;
 
     /**
      * Returns the array of LineItems
@@ -17,7 +17,7 @@ public interface InvoiceI extends java.rmi.Remote {
      * @return ItemLine array
      * @throws java.rmi.RemoteException
      */
-    public ItemLineI[] getItemList() throws RemoteException;
+    public IItemLine[] getItemList() throws RemoteException;
     
     /**
      * 
@@ -25,7 +25,7 @@ public interface InvoiceI extends java.rmi.Remote {
      * @return
      * @throws RemoteException 
      */
-    public ItemLineI getItemLineAtIndex(int i) throws RemoteException;
+    public IItemLine getItemLineAtIndex(int i) throws RemoteException;
 
     /**
      * Returns the payment for this transaction
@@ -33,7 +33,7 @@ public interface InvoiceI extends java.rmi.Remote {
      * @return payment type
      * @throws java.rmi.RemoteException
      */
-    public PaymentI getPayment() throws RemoteException;
+    public IPayment getPayment() throws RemoteException;
 
     /**
      * Returns the number of different items purchased in this transaction
@@ -58,7 +58,7 @@ public interface InvoiceI extends java.rmi.Remote {
      * @param newCustomer
      * @throws java.rmi.RemoteException
      */
-    public void setCustomer(CustomerI newCustomer) throws RemoteException;
+    public void setCustomer(ICustomer newCustomer) throws RemoteException;
 
     /**
      * Takes an ItemLine object and adds it to the Item List
@@ -66,7 +66,7 @@ public interface InvoiceI extends java.rmi.Remote {
      * @param newLn
      * @throws java.rmi.RemoteException
      */
-    public void addItemLine(ItemLineI newLn) throws RemoteException;
+    public void addItemLine(IItemLine newLn) throws RemoteException;
 
     public void addItemLine(String upc, int quantity) throws RemoteException;
 
@@ -75,7 +75,7 @@ public interface InvoiceI extends java.rmi.Remote {
      *
      * @param newPayment
      */
-    public void setPayment(PaymentI newPayment) throws RemoteException;
+    public void setPayment(IPayment newPayment) throws RemoteException;
 
 
 }

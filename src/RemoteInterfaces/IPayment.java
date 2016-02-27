@@ -5,14 +5,18 @@
  */
 package RemoteInterfaces;
 
-import java.io.Serializable;
-import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 /**
  *
- * @author Tony
+ * @author asouza
  */
-public interface CashI extends Remote, Serializable {
-    public double getAmount() throws RemoteException ;
+public interface IPayment extends java.rmi.Remote {
+    /**
+     * 
+     * @return 
+     * @throws java.rmi.RemoteException 
+     */
+    public double getAmount() throws RemoteException;
+    
 }

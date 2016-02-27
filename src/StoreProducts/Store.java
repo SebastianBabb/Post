@@ -4,6 +4,7 @@ import java.rmi.RemoteException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import main.POST;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,6 +20,7 @@ public class Store {
     private String storeName;
     private String storeAddress;
     private Catalog catalog;
+    private POST pos;
 
     //DEFAULT CONSTRUCTOR
     public Store() {
@@ -38,6 +40,14 @@ public class Store {
         return this.catalog;
     }
 
+    public POST getPos() {
+        return pos;
+    }
+
+    public void setPos(POST pos) {
+        this.pos = pos;
+    }
+
     public void setCatalog(Catalog newCatalog) {
 
         this.catalog = newCatalog;
@@ -52,6 +62,7 @@ public class Store {
     public String getStoreAddress() {
         return this.storeAddress;
     }
+
     //store name setter
     public void setStoreName(String newName) {
         this.storeName = newName;

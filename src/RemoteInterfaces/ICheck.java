@@ -5,14 +5,14 @@
  */
 package RemoteInterfaces;
 
+import java.io.Serializable;
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
 /**
  *
- * @author asouza
+ * @author Tony
  */
-public interface CustomerI extends java.rmi.Remote {
-
-    public String getName() throws java.rmi.RemoteException;
-
-    public void setName(String name) throws java.rmi.RemoteException;
-
+public interface ICheck  extends Remote, Serializable {
+    public double getAmount() throws RemoteException ;
 }

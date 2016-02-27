@@ -1,7 +1,7 @@
 package StoreProducts;
 
-import RemoteInterfaces.CatalogI;
-import RemoteInterfaces.ItemI;
+import RemoteInterfaces.ICatalog;
+import RemoteInterfaces.IItem;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
@@ -14,7 +14,7 @@ import java.rmi.server.UnicastRemoteObject;
  *
  * @author andre_000
  */
-public class Catalog extends UnicastRemoteObject implements CatalogI {
+public class Catalog extends UnicastRemoteObject implements ICatalog {
 
     private static final int MAX_PRODUCTS = 100;
 
@@ -81,7 +81,7 @@ public class Catalog extends UnicastRemoteObject implements CatalogI {
     }
 
     @Override
-    public ItemI getItem(String upc) throws RemoteException {
+    public IItem getItem(String upc) throws RemoteException {
         for (int i = 0; i < this.numProducts; i++) {
             if (upc.equalsIgnoreCase(this.products[i].getItemUPC())) {
                 return this.products[i];

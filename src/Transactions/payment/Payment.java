@@ -1,18 +1,23 @@
 package Transactions.payment;
 
-public class Payment {
+import RemoteInterfaces.IPayment;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+public class Payment extends UnicastRemoteObject  implements IPayment {
 
     private final double amount;
     
-    public Payment() {
+    public Payment() throws RemoteException {
         this.amount = 0;
     }
 
-    public Payment(double amount) {
+    public Payment(double amount)throws RemoteException {
         this.amount = amount;
     }
     
-    public double getAmount() {
+    @Override
+    public double getAmount() throws RemoteException{
         return amount;
     }
 }

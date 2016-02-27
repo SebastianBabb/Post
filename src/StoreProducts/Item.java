@@ -1,6 +1,6 @@
 package StoreProducts;
 
-import RemoteInterfaces.ItemI;
+import RemoteInterfaces.IItem;
 import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -14,7 +14,7 @@ import java.rmi.server.UnicastRemoteObject;
  *
  * @author andre_000
  */
-public class Item extends UnicastRemoteObject implements ItemI {
+public class Item extends UnicastRemoteObject implements IItem {
     
     String description;
     String UPC;

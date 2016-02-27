@@ -1,6 +1,6 @@
 package Transactions;
 
-import RemoteInterfaces.ItemLineI;
+import RemoteInterfaces.IItemLine;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
@@ -8,7 +8,7 @@ import java.rmi.server.UnicastRemoteObject;
  * and specifies the quantity of that item to be checked out.
  * @author Jrubin
  */
-public class ItemLine extends UnicastRemoteObject implements ItemLineI{
+public class ItemLine extends UnicastRemoteObject implements IItemLine{
     private int quantity;
     private String UPC;
     

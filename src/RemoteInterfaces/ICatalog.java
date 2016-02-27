@@ -6,7 +6,7 @@ import java.rmi.RemoteException;
  *
  * @author asouza
  */
-public interface CatalogI extends java.rmi.Remote {
+public interface ICatalog extends java.rmi.Remote {
     /**
      * 
      * @param upc
@@ -20,7 +20,7 @@ public interface CatalogI extends java.rmi.Remote {
      * @return
      * @throws RemoteException 
      */
-    public ItemI getItem(String upc) throws RemoteException;
+    public IItem getItem(String upc) throws RemoteException;
     /**
      * 
      * @return

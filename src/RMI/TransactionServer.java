@@ -27,6 +27,7 @@ public class TransactionServer {
             Registry registry = LocateRegistry.createRegistry(1099);
 
             Manager sm = new Manager();
+            sm.init();
             sm.setCatalog(catalog);
 
             registry.rebind("Manager", (Manager) sm);

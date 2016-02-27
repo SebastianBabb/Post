@@ -1,6 +1,6 @@
 package Transactions;
 
-import RemoteInterfaces.CustomerI;
+import RemoteInterfaces.ICustomer;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
@@ -9,7 +9,7 @@ import java.rmi.server.UnicastRemoteObject;
  *
  * @author Jrubin
  */
-public class Customer extends UnicastRemoteObject  implements CustomerI    {
+public class Customer extends UnicastRemoteObject  implements ICustomer    {
 
     private String name;
 

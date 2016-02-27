@@ -13,6 +13,9 @@ import java.rmi.RemoteException;
  *
  * @author Tony
  */
-public interface CheckI  extends Remote, Serializable {
-    public double getAmount() throws RemoteException ;
+public interface ICredit extends Remote, Serializable {
+
+    public double getAmount() throws RemoteException;
+
+    public String getNumber() throws RemoteException;
 }
