@@ -1,10 +1,10 @@
 package Transactions;
 
-import RemoteInterfaces.CustomerI;
-import RemoteInterfaces.InvoiceI;
-import RemoteInterfaces.ItemLineI;
+import RemoteInterfaces.ICustomer;
+import RemoteInterfaces.IInvoice;
+import RemoteInterfaces.IItemLine;
 import Transactions.payment.Payment;
-import RemoteInterfaces.PaymentI;
+import RemoteInterfaces.IPayment;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
@@ -14,7 +14,7 @@ import java.rmi.server.UnicastRemoteObject;
  *
  * @author Jrubin
  */
-public class Invoice extends UnicastRemoteObject implements InvoiceI {
+public class Invoice extends UnicastRemoteObject implements IInvoice {
 
     private static final int MAX_LINES = 100;
 
@@ -82,7 +82,7 @@ public class Invoice extends UnicastRemoteObject implements InvoiceI {
      * @return payment type
      */
     @Override
-    public PaymentI getPayment() {
+    public IPayment getPayment() {
         return this.payment;
     }
 
@@ -113,7 +113,7 @@ public class Invoice extends UnicastRemoteObject implements InvoiceI {
      * @param newCustomer
      */
     @Override
-    public void setCustomer(CustomerI newCustomer) throws RemoteException {
+    public void setCustomer(ICustomer newCustomer) throws RemoteException {
         this.customer = (Customer) newCustomer;
     }
 
@@ -123,7 +123,7 @@ public class Invoice extends UnicastRemoteObject implements InvoiceI {
      * @param newLn
      */
     @Override
-    public void addItemLine(ItemLineI newLn) throws RemoteException {
+    public void addItemLine(IItemLine newLn) throws RemoteException {
         this.lineItems[numOfLines] = (ItemLine) newLn;
         this.numOfLines++;
     }
@@ -134,7 +134,7 @@ public class Invoice extends UnicastRemoteObject implements InvoiceI {
      * @param newPayment
      */
     @Override
-    public void setPayment(PaymentI newPayment) throws RemoteException {
+    public void setPayment(IPayment newPayment) throws RemoteException {
         this.payment = (Payment) newPayment;
     }
 

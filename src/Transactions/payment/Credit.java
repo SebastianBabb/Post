@@ -1,9 +1,9 @@
 package Transactions.payment;
 
-import RemoteInterfaces.CreditI;
+import RemoteInterfaces.ICredit;
 import java.rmi.RemoteException;
 
-public class Credit extends Payment implements CreditI {
+public class Credit extends Payment implements ICredit {
 
     private final String number;
 

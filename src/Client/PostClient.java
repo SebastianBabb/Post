@@ -1,6 +1,6 @@
 package Client;
 
-import RemoteInterfaces.ManagerI;
+import RemoteInterfaces.IManager;
 import java.rmi.AccessException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -22,9 +22,9 @@ public class PostClient {
         return registry;
     }
 
-    public ManagerI getManager() throws RemoteException {
+    public IManager getManager() throws RemoteException {
         try {
-            return (ManagerI) registry.lookup("Manager");
+            return (IManager) registry.lookup("Manager");
         } catch (NotBoundException ex) {
             System.err.println("Registry item Not Found" + ex.getMessage());
         } catch (AccessException ex) {

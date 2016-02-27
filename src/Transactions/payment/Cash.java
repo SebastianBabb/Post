@@ -5,14 +5,14 @@
  */
 package Transactions.payment;
 
-import RemoteInterfaces.CashI;
+import RemoteInterfaces.ICash;
 import java.rmi.RemoteException;
 
 /**
  *
  * @author Tony
  */
-public class Cash extends Payment implements CashI{
+public class Cash extends Payment implements ICash{
 
     public Cash() throws RemoteException {
         super(0);

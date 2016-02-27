@@ -119,4 +119,10 @@ public class GInvoicePanel extends javax.swing.JPanel implements InvoicePanel {
         curTotal += addedPrice;
         this.lblRunningTotal.setText(String.format("%.2f", curTotal));
     }
+    
+    @Override
+    public void resetPanel(){
+        this.lblRunningTotal.setText("");
+        this.invoiceList.setText("");
+    }
 }

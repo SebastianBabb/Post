@@ -9,12 +9,12 @@ package postgui;
  *
  * @author Tony
  */
-public class GInvoicePanel extends javax.swing.JPanel {
+public class GPrintedInvoicePanel extends javax.swing.JPanel {
 
     /**
      * Creates new form GInvoicePanel
      */
-    public GInvoicePanel() {
+    public GPrintedInvoicePanel() {
         initComponents();
     }
 

@@ -1,9 +1,9 @@
 package Transactions.payment;
 
-import RemoteInterfaces.CheckI;
+import RemoteInterfaces.ICheck;
 import java.rmi.RemoteException;
 
-public class Check extends Payment implements CheckI {
+public class Check extends Payment implements ICheck {
 
     public Check(double amount) throws RemoteException {
         super(amount);

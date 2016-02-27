@@ -6,8 +6,7 @@
 package postgui;
 
 import Client.PostClient;
-import RemoteInterfaces.ManagerI;
-import RemoteInterfaces.PaymentI;
+import RemoteInterfaces.IManager;
 import Transactions.Customer;
 import Transactions.Invoice;
 import Transactions.ItemLine;
@@ -199,7 +198,7 @@ public final class GPost extends javax.swing.JFrame {
 
     public void retrieveUPCList() {
         try {
-            ManagerI mi = (ManagerI) this.pc.getManager();
+            IManager mi = (IManager) this.pc.getManager();
             String[] list = mi.getCatalog().getUPCList();
             this.gProductPanel.loadUPClist(list);
         } catch (RemoteException ex) {
@@ -229,17 +228,24 @@ public final class GPost extends javax.swing.JFrame {
         
         try {
             Invoice curInv = new Invoice(new Customer(name),items, p,items.length);
-            ManagerI mgr = (ManagerI) this.pc.getManager();
+            IManager mgr = (IManager) this.pc.getManager();
             String sname = mgr.getStorename();
             
             String inv_back = mgr.getStorePOS().createInvoice(sname, curInv);
-            GInvoiceFrame f_inv = new GInvoiceFrame();
+            GPrintedInvoiceFrame f_inv = new GPrintedInvoiceFrame();
             f_inv.passInvString(inv_back);
             f_inv.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             f_inv.setVisible(true);
             f_inv.setAlwaysOnTop(true);
+            this.clearAllInfoAfterSale();
         } catch (RemoteException ex) {
             Logger.getLogger(GPost.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    public void clearAllInfoAfterSale(){
+        this.txtCustomerName.setText("");
+        this.gPaymentPanel.removePaymentPanels();
+        this.gInvoiceListPanel.resetPanel();
+        
     }
 }

@@ -1,7 +1,7 @@
 package postgui.product;
 
 import Client.PostClient;
-import RemoteInterfaces.ItemI;
+import RemoteInterfaces.IItem;
 import Transactions.ItemLine;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
@@ -117,7 +117,7 @@ public class GProductPanel extends javax.swing.JPanel {
         String qty = (String) this.txtQty.getText();
         PostClient tmp_pc = PostClient.getInstance();
         try {
-            ItemI tmp_itm = tmp_pc.getManager().getItem(itm);
+            IItem tmp_itm = tmp_pc.getManager().getItem(itm);
             double itm_prc = tmp_itm.getItemPrice();
             String desc = tmp_itm.getItemDescription();
             int qqty = Integer.parseInt(qty);

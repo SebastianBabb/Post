@@ -18,5 +18,9 @@ public interface InvoicePanel {
      */
     public void updateTotalLabel(double addedPrice);
     
+    /**
+     * 
+     */
+    public void resetPanel();
    
 }

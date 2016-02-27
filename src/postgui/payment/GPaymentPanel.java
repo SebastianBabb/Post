@@ -1,6 +1,6 @@
 package postgui.payment;
 
-import RemoteInterfaces.PaymentI;
+import RemoteInterfaces.IPayment;
 import Transactions.payment.Payment;
 import java.awt.event.ItemEvent;
 import javax.swing.JFrame;
@@ -143,7 +143,7 @@ public class GPaymentPanel extends javax.swing.JPanel {
         this.PostFrame.recievePaymentFromPanel(p);
         
     }
-    private void removePaymentPanels() {
+    public void removePaymentPanels() {
         this.jPaymentTypeSubPanel.removeAll();
         this.revalidate();
         this.repaint();
